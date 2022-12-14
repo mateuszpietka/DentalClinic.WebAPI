@@ -31,21 +31,32 @@ namespace DentalClinic.Users.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ApartamentNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("HouseNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("PostalCode")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Street")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Addresses", "users");
                 });
@@ -59,11 +70,35 @@ namespace DentalClinic.Users.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Roles", "users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Administrator"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Lekarz"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Pracownik recepcji"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Pacjent"
+                        });
                 });
 
             modelBuilder.Entity("DentalClinic.Users.Core.Entities.User", b =>
@@ -74,62 +109,81 @@ namespace DentalClinic.Users.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<int>("AddressId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PersonalIdNumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressId")
-                        .IsUnique();
+                    b.HasIndex("Email");
 
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users", "users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            Email = "root@dentalclinic.com",
+                            FirstName = "Root",
+                            LastName = "",
+                            PasswordHash = "pass",
+                            RoleId = 1
+                        });
+                });
+
+            modelBuilder.Entity("DentalClinic.Users.Core.Entities.Address", b =>
+                {
+                    b.HasOne("DentalClinic.Users.Core.Entities.User", "User")
+                        .WithOne("Address")
+                        .HasForeignKey("DentalClinic.Users.Core.Entities.Address", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("DentalClinic.Users.Core.Entities.User", b =>
                 {
-                    b.HasOne("DentalClinic.Users.Core.Entities.Address", "Address")
-                        .WithOne("User")
-                        .HasForeignKey("DentalClinic.Users.Core.Entities.User", "AddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("DentalClinic.Users.Core.Entities.Role", "Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Address");
-
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("DentalClinic.Users.Core.Entities.Address", b =>
+            modelBuilder.Entity("DentalClinic.Users.Core.Entities.User", b =>
                 {
-                    b.Navigation("User");
+                    b.Navigation("Address");
                 });
 #pragma warning restore 612, 618
         }
