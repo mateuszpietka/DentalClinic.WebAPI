@@ -3,4 +3,4 @@ using MediatR;
 
 namespace DentalClinic.Users.Application.Command;
 
-public record SignInCommand(SignInDto SignInDto) : IRequest<TokenDto>;
+public record RegisterPatientCommand(RegisterPatientDto RegisterPatientDto) : IRequest<long>;

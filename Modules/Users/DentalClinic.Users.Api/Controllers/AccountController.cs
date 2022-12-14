@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DentalClinic.Users.Api.Controllers;
 
+[Route("api/account")]
 [ApiController]
 internal class AccountController : ControllerBase
 {
@@ -15,11 +16,19 @@ internal class AccountController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpPost]
-    public async Task<ActionResult<AuthDto>> SignIn([FromBody] SignInDto signInDto)
+    [HttpPost("registerPatient")]
+    public async Task<ActionResult> RegisterPatient([FromBody] RegisterPatientDto registerPatientDto)
     {
-        var result = await _mediator.Send(new SignInCommand(signInDto));
+        var resultId = await _mediator.Send(new RegisterPatientCommand(registerPatientDto));
 
-        return Ok(result);
+        return Created($"api/user/{resultId}", resultId);
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<TokenDto>> SignIn([FromBody] SignInDto signInDto)
+    {
+        var authDto = await _mediator.Send(new SignInCommand(signInDto));
+
+        return Ok(authDto);
     }
 }

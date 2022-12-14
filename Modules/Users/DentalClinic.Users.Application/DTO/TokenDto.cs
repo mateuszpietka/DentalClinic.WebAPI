@@ -1,9 +1,7 @@
 ﻿namespace DentalClinic.Users.Application.DTO;
 
-public record AuthDto
+public record TokenDto
 (
     string Token,
-    string Issuer,
-    DateTime ValidFrom,
     DateTime ValidTo
 );

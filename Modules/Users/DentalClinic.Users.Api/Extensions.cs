@@ -11,7 +11,7 @@ public static class Extensions
 {
     public static IServiceCollection AddUsersModule(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddCoreLayer();
+        services.AddCoreLayer(configuration);
         services.AddApplicationLayer();
         services.AddInfrastructureLayer(configuration);
 
