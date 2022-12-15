@@ -39,7 +39,7 @@ public static class Extensions
         services.AddMediatR(typeof(Extensions));
         services.AddAutoMapper(typeof(Extensions));
         services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
-        services.AddScoped<IValidator<RegisterPatientDto>, RegisterPatientDtoValidator>(); // spróbować zamienić pojedyncze dodawnie validatorów na jeden z assembli
+        services.AddScoped<IValidator<RegisterPatientDto>, RegisterPatientDtoValidator>();
         services.AddScoped<IValidator<SignInDto>, SignInDtoValidator>();
         services.AddScoped<IAuthenticationService, AuthenticationService>();
 

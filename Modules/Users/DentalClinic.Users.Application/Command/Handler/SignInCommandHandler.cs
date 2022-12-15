@@ -35,13 +35,13 @@ internal class SignInCommandHandler : IRequestHandler<SignInCommand, TokenDto>
         if (user == null)
             throw new InvalidEmailOrPasswordException();
 
-        var passwordHash = _passwordHasher.HashPassword(user, request.SignInDto.Password);
+        var verifedPasswordResult = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, request.SignInDto.Password);
 
-        if (passwordHash != user.PasswordHash)
+        if (verifedPasswordResult == PasswordVerificationResult.Failed)
             throw new InvalidEmailOrPasswordException();
 
         var token = _authenticationService.GenerateToken(user);
-        var expire = DateTime.Now.AddDays(_authenticationSettings.JwtExpireDay);
+        var expire = DateTime.Now.AddDays(_authenticationSettings.JwtExpireDays);
 
         return new TokenDto(token, expire);
     }

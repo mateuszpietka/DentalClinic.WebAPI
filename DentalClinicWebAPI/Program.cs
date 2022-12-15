@@ -14,7 +14,7 @@ namespace DentalClinicWebAPI
 
             builder.Services.AddControllers();
             //
-            builder.Services.AddFluentValidationAutoValidation();//.AddFluentValidationClientsideAdapters(); // sprawdziæ czy dzia³a walidacja
+            builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddSharedModule();
             builder.Services.AddUsersModule(configuration);
             //
@@ -26,14 +26,14 @@ namespace DentalClinicWebAPI
                 app.UseDeveloperExceptionPage();
 
             app.UseHttpsRedirection();
-            app.UseAuthorization();
-            app.UseAuthentication();
             app.UseRouting();
-            app.MapControllers();
+            app.UseAuthentication();
+            app.UseAuthorization();
             //
             app.UseSharedModule();
             app.UseUsersModule();
             //
+            app.MapControllers();
             app.Run();
         }
     }

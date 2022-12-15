@@ -7,7 +7,7 @@ namespace DentalClinic.Users.Api.Controllers;
 
 [Route("api/account")]
 [ApiController]
-internal class AccountController : ControllerBase
+public class AccountController : ControllerBase
 {
     private readonly IMediator _mediator;
 
@@ -24,7 +24,7 @@ internal class AccountController : ControllerBase
         return Created($"api/user/{resultId}", resultId);
     }
 
-    [HttpPost]
+    [HttpPost("signIn")]
     public async Task<ActionResult<TokenDto>> SignIn([FromBody] SignInDto signInDto)
     {
         var authDto = await _mediator.Send(new SignInCommand(signInDto));

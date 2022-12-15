@@ -42,7 +42,7 @@ internal class UserConfiguration : IEntityTypeConfiguration<User>
                 FirstName = "Root",
                 LastName = string.Empty,
                 Email = "root@dentalclinic.com",
-                PasswordHash = "pass",
+                PasswordHash = "AQAAAAEAACcQAAAAEIItCVnzxUOBST/AUvsJ+LRyypCYDf8HOpENB2vr8JBNMtyJ6eESlg3TrwTajdPqBQ==",
                 RoleId = 1,
             });
     }

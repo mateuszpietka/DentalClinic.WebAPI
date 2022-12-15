@@ -2,7 +2,7 @@
 
 public interface IAuthenticationSettings
 {
-    int JwtExpireDay { get; set; }
+    int JwtExpireDays { get; set; }
     string JwtIssuer { get; set; }
     string JwtKey { get; set; }
 }
