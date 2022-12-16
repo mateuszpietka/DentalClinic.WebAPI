@@ -16,9 +16,9 @@ internal class RoleConfiguration : IEntityTypeConfiguration<Role>
 
         builder.HasData(
             new Role(1, "Administrator"),
-            new Role(2, "Lekarz"),
-            new Role(3, "Pracownik recepcji"),
-            new Role(4, "Pacjent")
+            new Role(2, "Doctor"),
+            new Role(3, "Receptionist"),
+            new Role(4, "Patient")
             );
     }
 }
