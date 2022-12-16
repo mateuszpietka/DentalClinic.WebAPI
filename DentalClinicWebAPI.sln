@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinicWebAPI", "DentalClinicWebAPI\DentalClinicWebAPI.csproj", "{23CBCA71-5EEC-48B1-8ED4-1423F466A3CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinicWebAPI", "DentalClinicWebAPI\DentalClinicWebAPI.csproj", "{23CBCA71-5EEC-48B1-8ED4-1423F466A3CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{8BA8F750-8EE1-46E0-B2A3-11CCC77C83A5}"
 EndProject
@@ -11,23 +11,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A8A131
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6B9B09D2-3E8A-47FE-AAA5-FFDFEE1DC064}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.Shared.Abstarctions", "Shared\DentalClinic.Shared.Abstarctions\DentalClinic.Shared.Abstarctions.csproj", "{04595D40-F4DA-42C5-ADC0-588C2C7C1510}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Shared.Abstarctions", "Shared\DentalClinic.Shared.Abstarctions\DentalClinic.Shared.Abstarctions.csproj", "{04595D40-F4DA-42C5-ADC0-588C2C7C1510}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{3C1BB15B-983D-4282-9FE8-A1CB67739617}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.Users.Infrastructure", "Modules\Users\DentalClinic.Users.Infrastructure\DentalClinic.Users.Infrastructure.csproj", "{3ADC6D3E-26BD-4137-91C6-C9944782C6C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Users.Infrastructure", "Modules\Users\DentalClinic.Users.Infrastructure\DentalClinic.Users.Infrastructure.csproj", "{3ADC6D3E-26BD-4137-91C6-C9944782C6C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.Users.Api", "Modules\Users\DentalClinic.Users.Api\DentalClinic.Users.Api.csproj", "{1136C1AD-D91A-4C0D-93C5-E640C02BCB7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Users.Api", "Modules\Users\DentalClinic.Users.Api\DentalClinic.Users.Api.csproj", "{1136C1AD-D91A-4C0D-93C5-E640C02BCB7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.Users.Application", "Modules\Users\DentalClinic.Users.Application\DentalClinic.Users.Application.csproj", "{BE42B4E1-70FE-4BCE-8096-762B6C48CE58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Users.Application", "Modules\Users\DentalClinic.Users.Application\DentalClinic.Users.Application.csproj", "{BE42B4E1-70FE-4BCE-8096-762B6C48CE58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.Users.Core", "Modules\Users\DentalClinic.Users.Core\DentalClinic.Users.Core.csproj", "{96262F72-4058-4A59-910F-832855DAA9CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Users.Core", "Modules\Users\DentalClinic.Users.Core\DentalClinic.Users.Core.csproj", "{96262F72-4058-4A59-910F-832855DAA9CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.Users.Shared", "Modules\Users\DentalClinic.Users.Shared\DentalClinic.Users.Shared.csproj", "{D09CCAE9-D9EC-4A1E-A5F8-9ADE6D038370}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Users.Shared", "Modules\Users\DentalClinic.Users.Shared\DentalClinic.Users.Shared.csproj", "{D09CCAE9-D9EC-4A1E-A5F8-9ADE6D038370}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.Shared.Core", "Shared\DentalClinic.Shared.Core\DentalClinic.Shared.Core.csproj", "{6F2BD839-DC3D-458A-BF10-29EAFAD20EAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Shared.Core", "Shared\DentalClinic.Shared.Core\DentalClinic.Shared.Core.csproj", "{6F2BD839-DC3D-458A-BF10-29EAFAD20EAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{7E0E2C0A-A004-4A6C-932F-C2678B119CDA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B18BCC3-883F-4273-974F-B0E083E2040E}"
+	ProjectSection(SolutionItems) = preProject
+		ToDo.txt = ToDo.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

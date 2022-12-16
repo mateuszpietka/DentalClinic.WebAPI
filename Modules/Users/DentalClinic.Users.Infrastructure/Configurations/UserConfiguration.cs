@@ -20,7 +20,7 @@ internal class UserConfiguration : IEntityTypeConfiguration<User>
             .IsRequired()
             .HasMaxLength(50);
 
-        builder.Property(x=>x.Email)
+        builder.Property(x => x.Email)
             .IsRequired()
             .HasMaxLength(100);
 
@@ -35,6 +35,9 @@ internal class UserConfiguration : IEntityTypeConfiguration<User>
             .WithOne(pp => pp.User)
             .HasForeignKey<Address>(pp => pp.UserId);
 
+        builder.Property(x => x.IsConfirmed)
+            .IsRequired();
+
         builder.HasData(
             new User()
             {
@@ -44,6 +47,7 @@ internal class UserConfiguration : IEntityTypeConfiguration<User>
                 Email = "root@dentalclinic.com",
                 PasswordHash = "AQAAAAEAACcQAAAAEIItCVnzxUOBST/AUvsJ+LRyypCYDf8HOpENB2vr8JBNMtyJ6eESlg3TrwTajdPqBQ==",
                 RoleId = 1,
+                IsConfirmed = true,
             });
     }
 }

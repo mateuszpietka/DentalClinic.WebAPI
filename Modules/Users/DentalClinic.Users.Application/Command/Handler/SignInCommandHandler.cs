@@ -35,6 +35,9 @@ internal class SignInCommandHandler : IRequestHandler<SignInCommand, TokenDto>
         if (user == null)
             throw new InvalidEmailOrPasswordException();
 
+        if (!user.IsConfirmed)
+            throw new UserNotConfirmedException();
+
         var verifedPasswordResult = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, request.SignInDto.Password);
 
         if (verifedPasswordResult == PasswordVerificationResult.Failed)
