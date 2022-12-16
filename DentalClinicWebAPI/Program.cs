@@ -20,13 +20,20 @@ namespace DentalClinicWebAPI
             builder.Services.AddUsersModule(configuration);
             //
             builder.Services.AddControllers();
-
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder.AllowAnyOrigin();
+                });
+            });
             // APP
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
+            app.UseCors("CorsPolicy");
             app.UseErrorHandling();
             app.UseAuthentication();
             app.UseHttpsRedirection();

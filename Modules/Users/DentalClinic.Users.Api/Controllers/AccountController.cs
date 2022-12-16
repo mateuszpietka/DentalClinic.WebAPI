@@ -16,6 +16,7 @@ public class AccountController : ControllerBase
         _mediator = mediator;
     }
 
+    //[Authorize(Roles = "Doctor, Patient")]
     [HttpPost("registerPatient")]
     public async Task<ActionResult> RegisterPatient([FromBody] RegisterPatientDto registerPatientDto)
     {
