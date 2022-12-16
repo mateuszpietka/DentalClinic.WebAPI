@@ -28,9 +28,9 @@ namespace DentalClinicWebAPI
                 app.UseDeveloperExceptionPage();
 
             app.UseErrorHandling();
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseAuthentication();
             app.UseAuthorization();
             //
             app.UseSharedModule();
