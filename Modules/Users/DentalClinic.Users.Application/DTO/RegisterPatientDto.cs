@@ -1,6 +1,6 @@
 ﻿namespace DentalClinic.Users.Application.DTO;
 
-public class RegisterPatientDto
+public record RegisterPatientDto
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
