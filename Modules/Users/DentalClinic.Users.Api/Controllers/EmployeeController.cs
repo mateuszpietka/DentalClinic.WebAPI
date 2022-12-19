@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DentalClinic.Users.Api.Controllers;
 
-[Route("api/account")]
+[Route("api/employee")]
 [ApiController]
 [Authorize(Roles = "Administrator")]
 public class EmployeeController : ControllerBase
@@ -27,7 +27,7 @@ public class EmployeeController : ControllerBase
         return Ok(employees);
     }
 
-    [HttpPost("/{id}")]
+    [HttpPost]
     public async Task<ActionResult> AddEmployee([FromBody] CreateEmployeeDto createEmployeeDto)
     {
         var id = await _mediator.Send(new CreateEmpolyeeCommand(createEmployeeDto));
@@ -43,7 +43,7 @@ public class EmployeeController : ControllerBase
         return Ok();
     }
 
-    [HttpDelete("/{id}")]
+    [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteEmployee([FromRoute] long id)
     {
         await _mediator.Send(new DeleteEmployeeCommand(id));
