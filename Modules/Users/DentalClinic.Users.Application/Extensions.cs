@@ -41,6 +41,7 @@ public static class Extensions
         services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
         services.AddScoped<IValidator<RegisterPatientDto>, RegisterPatientDtoValidator>();
         services.AddScoped<IValidator<SignInDto>, SignInDtoValidator>();
+        services.AddScoped<IValidator<CreateEmployeeDto>, CreateEmployeeDtoValidator>();
         services.AddScoped<IAuthenticationService, AuthenticationService>();
 
         return services;
