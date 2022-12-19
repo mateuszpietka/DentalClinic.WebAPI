@@ -16,13 +16,12 @@ public class AccountController : ControllerBase
         _mediator = mediator;
     }
 
-    //[Authorize(Roles = "Doctor, Patient")]
     [HttpPost("registerPatient")]
     public async Task<ActionResult> RegisterPatient([FromBody] RegisterPatientDto registerPatientDto)
     {
         var resultId = await _mediator.Send(new RegisterPatientCommand(registerPatientDto));
 
-        return Created($"api/user/{resultId}", resultId);
+        return Created($"api/patient/{resultId}", resultId);
     }
 
     [HttpPost("signIn")]
