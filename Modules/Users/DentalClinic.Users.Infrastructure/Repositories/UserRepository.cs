@@ -9,11 +9,36 @@ namespace DentalClinic.Users.Infrastructure.Repositories;
 
 internal class UserRepository : GenericRepositoryBase<User, long>, IUserRepository
 {
-	public UserRepository(UserDbContext context)
-		: base(context)
-	{
+    public UserRepository(UserDbContext context)
+        : base(context)
+    {
 
-	}
+    }
+
+
+    public override async Task<IEnumerable<User>> GetAllAsync()
+    {
+        return await _table
+            .Include(x => x.Role)
+            .Include(x => x.Address)
+            .ToListAsync();
+    }
+
+    public override async Task<IEnumerable<User>> GetAllAsync(Expression<Func<User, bool>> predicate)
+    {
+        return await _table
+            .Include(x => x.Role)
+            .Include(x => x.Address)
+            .Where(predicate).ToListAsync();
+    }
+
+    public override async Task<User> GetByIdAsync(long id)
+    {
+        return await _table
+            .Include(x => x.Role)
+            .Include(x => x.Address)
+            .FirstOrDefaultAsync(x => x.Id == id);
+    }
 
     public async Task<bool> AnyAsync(Expression<Func<User, bool>> predicate)
     {
