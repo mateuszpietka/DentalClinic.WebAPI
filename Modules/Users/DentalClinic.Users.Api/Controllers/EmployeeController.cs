@@ -48,6 +48,6 @@ public class EmployeeController : ControllerBase
     {
         await _mediator.Send(new DeleteEmployeeCommand(id));
 
-        return Ok();
+        return NoContent();
     }
 }

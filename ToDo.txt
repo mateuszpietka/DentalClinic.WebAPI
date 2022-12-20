@@ -1,5 +1,0 @@
-1. U¿ytkownicy
-	Obs³uga wyj¹tków
-	Wylogowanie
-	CQRS
-	Autoryzacja
