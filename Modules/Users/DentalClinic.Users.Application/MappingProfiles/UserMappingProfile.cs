@@ -3,11 +3,13 @@ using DentalClinic.Users.Application.DTO;
 using DentalClinic.Users.Core.Entities;
 
 namespace DentalClinic.Users.Application.MappingProfiles;
-internal class EmployeeMappingProfile : Profile
+internal class UserMappingProfile : Profile
 {
-    public EmployeeMappingProfile()
+    public UserMappingProfile()
     {
         CreateMap<User, EmployeeDto>()
             .ForMember(x => x.RoleName, c => c.MapFrom(s => s.Role.Name));
+
+        CreateMap<User, PatientDto>();
     }
 }
