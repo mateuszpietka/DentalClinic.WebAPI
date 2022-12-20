@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\DentalClinic.Shared.Abstarctions\DentalClinic.Shared.Abstarctions.csproj" />
+  </ItemGroup>
+
 </Project>
