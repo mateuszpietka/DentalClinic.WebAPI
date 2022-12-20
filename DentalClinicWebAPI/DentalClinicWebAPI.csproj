@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Modules\Users\DentalClinic.Users.Api\DentalClinic.Users.Api.csproj" />
+    <ProjectReference Include="..\Modules\VisitSchedule\DentalClinic.VisitSchedule.Api\DentalClinic.VisitSchedule.Api.csproj" />
     <ProjectReference Include="..\Shared\DentalClinic.Shared.Core\DentalClinic.Shared.Core.csproj" />
   </ItemGroup>
 
