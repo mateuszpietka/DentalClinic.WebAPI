@@ -1,4 +1,4 @@
-﻿namespace DentalClinic.Users.Application.DTO;
+﻿namespace DentalClinic.Users.Shared.DTO;
 
 public class PatientDto
 {

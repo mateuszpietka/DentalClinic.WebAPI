@@ -1,6 +1,7 @@
 ﻿using DentalClinic.Users.Application.Command;
 using DentalClinic.Users.Application.DTO;
 using DentalClinic.Users.Application.Queries;
+using DentalClinic.Users.Shared.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

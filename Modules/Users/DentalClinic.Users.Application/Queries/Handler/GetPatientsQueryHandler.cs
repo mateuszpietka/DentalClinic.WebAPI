@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using DentalClinic.Users.Application.DTO;
 using DentalClinic.Users.Core.Repositories;
+using DentalClinic.Users.Shared.DTO;
 using MediatR;
 
 namespace DentalClinic.Users.Application.Queries.Handler;

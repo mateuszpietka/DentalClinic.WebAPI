@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DentalClinic.Users.Application.DTO;
 using DentalClinic.Users.Core.Entities;
+using DentalClinic.Users.Shared.DTO;
 
 namespace DentalClinic.Users.Application.MappingProfiles;
 internal class UserMappingProfile : Profile
@@ -18,5 +19,7 @@ internal class UserMappingProfile : Profile
             .ForMember(x => x.ApartamentNumber, c => c.MapFrom(s => s.Address != null ? s.Address.ApartamentNumber : string.Empty))
             .ForMember(x => x.PostalCode, c => c.MapFrom(s => s.Address != null ? s.Address.PostalCode : string.Empty))
             .ForMember(x => x.City, c => c.MapFrom(s => s.Address != null ? s.Address.City : string.Empty));
+
+        CreateMap<User, DoctorDto>();
     }
 }

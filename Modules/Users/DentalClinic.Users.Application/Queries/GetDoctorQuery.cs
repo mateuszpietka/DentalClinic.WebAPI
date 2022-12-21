@@ -3,4 +3,4 @@ using MediatR;
 
 namespace DentalClinic.Users.Application.Queries;
 
-public record GetPatientsQuery() : IRequest<IEnumerable<PatientDto>>;
+internal record GetDoctorQuery(long DoctorId): IRequest<DoctorDto>;
