@@ -23,6 +23,10 @@ internal class VisitConfiguration : IEntityTypeConfiguration<Visit>
         builder.Property(x => x.StartDate)
             .IsRequired();
 
+        builder.Property(x => x.IsFirstVisit)
+            .IsRequired()
+            .HasDefaultValue(false);
+
         builder.Property(x => x.VisitTypeId)
             .IsRequired();
     }
