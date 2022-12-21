@@ -10,6 +10,10 @@ internal class VisitConfiguration : IEntityTypeConfiguration<Visit>
     {
         builder.HasKey(x => x.Id);
 
+        builder.HasIndex(x => x.PatientId);
+
+        builder.HasIndex(x => x.DoctorId);
+
         builder.Property(x => x.DoctorId)
             .IsRequired();
 
