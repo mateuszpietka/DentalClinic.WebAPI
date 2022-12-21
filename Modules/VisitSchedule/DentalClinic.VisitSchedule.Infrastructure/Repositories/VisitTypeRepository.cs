@@ -5,9 +5,9 @@ using DentalClinic.VisitSchedule.Infrastructure.Context;
 
 namespace DentalClinic.VisitSchedule.Infrastructure.Repositories;
 
-internal class VisitRepository : GenericRepositoryBase<Visit, long>, IVisitRepository
+internal class VisitTypeRepository : GenericRepositoryBase<VisitType, long>, IVisitTypeRepository
 {
-    public VisitRepository(VisitScheduleDbContext context) 
+    public VisitTypeRepository(VisitScheduleDbContext context) 
         : base(context)
     {
     }
