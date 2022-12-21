@@ -4,6 +4,7 @@ using DentalClinic.Users.Application.Services;
 using DentalClinic.Users.Core.Authentication;
 using DentalClinic.Users.Core.Entities;
 using DentalClinic.Users.Core.Services;
+using DentalClinic.Users.Shared;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -44,6 +45,7 @@ public static class Extensions
         services.AddScoped<IValidator<CreateEmployeeDto>, CreateEmployeeDtoValidator>();
         services.AddScoped<IValidator<UpdateEmployeeDto>, UpdateEmployeeDtoValidator>();
         services.AddScoped<IAuthenticationService, AuthenticationService>();
+        services.AddScoped<IUserModuleApi, UserModuleApi>();
 
         return services;
     }
