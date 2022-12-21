@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DentalClinic.Users.Infrastructure.Configurations;
+namespace DentalClinic.VisitSchedule.Infrastructure.Configurations;
 
 internal class VisitTypeConfiguration : IEntityTypeConfiguration<VisitType>
 {
