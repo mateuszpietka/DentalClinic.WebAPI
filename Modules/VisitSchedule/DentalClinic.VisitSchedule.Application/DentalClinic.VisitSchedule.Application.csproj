@@ -16,8 +16,4 @@
     <ProjectReference Include="..\DentalClinic.VisitSchedule.Core\DentalClinic.VisitSchedule.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Queries\" />
-  </ItemGroup>
-
 </Project>

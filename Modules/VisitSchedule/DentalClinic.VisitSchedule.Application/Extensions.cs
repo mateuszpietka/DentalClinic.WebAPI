@@ -1,5 +1,7 @@
 ﻿using DentalClinic.VisitSchedule.Application.DTO;
 using DentalClinic.VisitSchedule.Application.DTO.Validators;
+using DentalClinic.VisitSchedule.Application.Services;
+using DentalClinic.VisitSchedule.Core.Services;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +19,7 @@ public static class Extensions
         services.AddScoped<IValidator<DoctorVisitScheduleFilterDto>, DoctorVisitScheduleFilterDtoValidator>();
         services.AddScoped<IValidator<PatientVisitScheduleFilterDto>, PatientVisitScheduleFilterDtoValidator>();
         services.AddScoped<IValidator<ReceptionistVisitScheduleFilterDto>, ReceptionistVisitScheduleFilterDtoValidator>();
+        services.AddScoped<IVisitScheduleService, VisitScheduleService>();
 
         return services;
     }

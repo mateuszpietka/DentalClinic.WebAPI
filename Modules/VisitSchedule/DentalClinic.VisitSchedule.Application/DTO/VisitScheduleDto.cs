@@ -2,5 +2,5 @@
 
 public class VisitScheduleDto
 {
-    public VisitDto[] Visits;
+    public VisitDto[] Visits { get; set; }
 }

@@ -30,6 +30,8 @@ internal class AddVisitCommandHandler : IRequestHandler<AddVisitCommand, long>
         await _userModuleApi.GetDoctorAsync(request.VisitDto.DoctorId);
         var patient = await _userModuleApi.GetPatientAsync(request.VisitDto.PatientId);
 
+        //jeśli dodaje pacjent to sprawdzić czy VisitId zgadza się z tym w tokenie
+
         if (!patient.IsConfirmed)
             throw new PatientUnconfirmedException("Only an confirmed patient can add the next visit");
 
