@@ -32,4 +32,13 @@ public class VisitController : ControllerBase
 
         return Ok();
     }
+
+    [HttpDelete("{id}")]
+    [Authorize(Roles = "Patient, Receptionist, Doctor")]
+    public async Task<ActionResult> CancellationVisit([FromRoute] long id)
+    {
+        await _mediator.Send(new CancellationVisitCommand(id));
+
+        return NoContent();
+    }
 }
