@@ -3,4 +3,4 @@ using MediatR;
 
 namespace DentalClinic.VisitSchedule.Application.Command;
 
-public record AddFirstVisitCommand(CreateFirstVisitDto FirstVisitDto): IRequest<int>;
+public record AddFirstVisitCommand(CreateFirstVisitDto FirstVisitDto): IRequest<long>;

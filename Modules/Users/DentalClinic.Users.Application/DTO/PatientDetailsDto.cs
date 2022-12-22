@@ -6,6 +6,7 @@ public class PatientDetailsDto
     public string LastName { get; set; }
     public string PersonalIdNumber { get; set; }
     public string Email { get; set; }
+    public bool IsConfirmed { get; set; }
     public string Phone { get; set; }
     public string Street { get; set; }
     public string HouseNumber { get; set; }

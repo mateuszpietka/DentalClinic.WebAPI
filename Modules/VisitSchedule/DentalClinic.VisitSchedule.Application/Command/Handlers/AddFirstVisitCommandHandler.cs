@@ -6,7 +6,7 @@ using DentalClinic.VisitSchedule.Core.Repositories;
 using MediatR;
 
 namespace DentalClinic.VisitSchedule.Application.Command.Handlers;
-internal class AddFirstVisitCommandHandler : IRequestHandler<AddFirstVisitCommand, int>
+internal class AddFirstVisitCommandHandler : IRequestHandler<AddFirstVisitCommand, long>
 {
     private readonly IMapper _mapper;
     private readonly IVisitRepository _visitRepository;
@@ -14,9 +14,9 @@ internal class AddFirstVisitCommandHandler : IRequestHandler<AddFirstVisitComman
     private readonly IUserModuleApi _userModuleApi;
 
     public AddFirstVisitCommandHandler(
-        IMapper mapper, 
-        IVisitRepository visitRepository, 
-        IVisitTypeRepository visitTypeRepository, 
+        IMapper mapper,
+        IVisitRepository visitRepository,
+        IVisitTypeRepository visitTypeRepository,
         IUserModuleApi userModuleApi)
     {
         _mapper = mapper;
@@ -25,20 +25,26 @@ internal class AddFirstVisitCommandHandler : IRequestHandler<AddFirstVisitComman
         _userModuleApi = userModuleApi;
     }
 
-    public async Task<int> Handle(AddFirstVisitCommand request, CancellationToken cancellationToken)
+    public async Task<long> Handle(AddFirstVisitCommand request, CancellationToken cancellationToken)
     {
         await _userModuleApi.GetDoctorAsync(request.FirstVisitDto.DoctorId);
-        await _userModuleApi.GetPatientAsync(request.FirstVisitDto.PatientId);
-        var visitType = _visitTypeRepository.GetByIdAsync(request.FirstVisitDto.VisitTypeId);
+        var patient = await _userModuleApi.GetPatientAsync(request.FirstVisitDto.PatientId);
+
+        if (patient.IsConfirmed)
+            throw new PatientConfirmedException("Only an unconfirmed patient can add the first visit");
+
+        if ((await _visitRepository.GetAllAsync(x => x.PatientId == patient.Id && x.IsFirstVisit == true)).Any())
+            throw new FirsVistiAlreadyExistsException();
+
+        var visitType = await _visitTypeRepository.GetByIdAsync(request.FirstVisitDto.VisitTypeId);
 
         if (visitType == null)
             throw new VisitTypeNotFoundException();
 
-        //sprawdzenie terminu
-
         var visit = _mapper.Map<Visit>(request.FirstVisitDto);
+        visit.VisitType = visitType;
         await _visitRepository.AddAsync(visit);
 
-        return visitType.Id;
+        return visit.Id;
     }
 }
