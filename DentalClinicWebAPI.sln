@@ -31,13 +31,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{7E0E2C0A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VisitSchedule", "VisitSchedule", "{05310A1F-7652-446E-8560-1C5CFD6CD90D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.VisitSchedule.Application", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Application\DentalClinic.VisitSchedule.Application.csproj", "{2F5BEA75-9D29-4E5D-8F82-A286F23FE262}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.VisitSchedule.Application", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Application\DentalClinic.VisitSchedule.Application.csproj", "{2F5BEA75-9D29-4E5D-8F82-A286F23FE262}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.VisitSchedule.Core", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Core\DentalClinic.VisitSchedule.Core.csproj", "{1767E8EB-1FB9-4AEB-8D90-35EDDE390809}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.VisitSchedule.Core", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Core\DentalClinic.VisitSchedule.Core.csproj", "{1767E8EB-1FB9-4AEB-8D90-35EDDE390809}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.VisitSchedule.Infrastructure", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Infrastructure\DentalClinic.VisitSchedule.Infrastructure.csproj", "{66A1CDBF-9890-48E1-815B-40173095D25E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.VisitSchedule.Infrastructure", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Infrastructure\DentalClinic.VisitSchedule.Infrastructure.csproj", "{66A1CDBF-9890-48E1-815B-40173095D25E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.VisitSchedule.Api", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Api\DentalClinic.VisitSchedule.Api.csproj", "{6E057CEE-CFF1-4799-915F-6419F16EF1FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.VisitSchedule.Api", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Api\DentalClinic.VisitSchedule.Api.csproj", "{6E057CEE-CFF1-4799-915F-6419F16EF1FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.Shared.Infrastructure", "Shared\DentalClinic.Shared.Infrastructure\DentalClinic.Shared.Infrastructure.csproj", "{48E73A28-7E0D-46C3-83AD-F8036CE9A326}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{6E057CEE-CFF1-4799-915F-6419F16EF1FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E057CEE-CFF1-4799-915F-6419F16EF1FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E057CEE-CFF1-4799-915F-6419F16EF1FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E73A28-7E0D-46C3-83AD-F8036CE9A326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E73A28-7E0D-46C3-83AD-F8036CE9A326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E73A28-7E0D-46C3-83AD-F8036CE9A326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E73A28-7E0D-46C3-83AD-F8036CE9A326}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,6 +118,7 @@ Global
 		{1767E8EB-1FB9-4AEB-8D90-35EDDE390809} = {05310A1F-7652-446E-8560-1C5CFD6CD90D}
 		{66A1CDBF-9890-48E1-815B-40173095D25E} = {05310A1F-7652-446E-8560-1C5CFD6CD90D}
 		{6E057CEE-CFF1-4799-915F-6419F16EF1FF} = {05310A1F-7652-446E-8560-1C5CFD6CD90D}
+		{48E73A28-7E0D-46C3-83AD-F8036CE9A326} = {A8A131FB-A9A9-4F18-AF06-F6A2E3136B31}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D1521830-319D-4E21-B38F-481F89290CA3}

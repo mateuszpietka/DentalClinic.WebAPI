@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Modules\Users\DentalClinic.Users.Api\DentalClinic.Users.Api.csproj" />
     <ProjectReference Include="..\Modules\VisitSchedule\DentalClinic.VisitSchedule.Api\DentalClinic.VisitSchedule.Api.csproj" />
     <ProjectReference Include="..\Shared\DentalClinic.Shared.Core\DentalClinic.Shared.Core.csproj" />
+    <ProjectReference Include="..\Shared\DentalClinic.Shared.Infrastructure\DentalClinic.Shared.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
