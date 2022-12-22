@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Shared.Abstarc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{3C1BB15B-983D-4282-9FE8-A1CB67739617}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Users.Infrastructure", "Modules\Users\DentalClinic.Users.Infrastructure\DentalClinic.Users.Infrastructure.csproj", "{3ADC6D3E-26BD-4137-91C6-C9944782C6C5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Users.Api", "Modules\Users\DentalClinic.Users.Api\DentalClinic.Users.Api.csproj", "{1136C1AD-D91A-4C0D-93C5-E640C02BCB7D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Users.Application", "Modules\Users\DentalClinic.Users.Application\DentalClinic.Users.Application.csproj", "{BE42B4E1-70FE-4BCE-8096-762B6C48CE58}"
@@ -35,11 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.VisitSchedule.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.VisitSchedule.Core", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Core\DentalClinic.VisitSchedule.Core.csproj", "{1767E8EB-1FB9-4AEB-8D90-35EDDE390809}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.VisitSchedule.Infrastructure", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Infrastructure\DentalClinic.VisitSchedule.Infrastructure.csproj", "{66A1CDBF-9890-48E1-815B-40173095D25E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.VisitSchedule.Api", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Api\DentalClinic.VisitSchedule.Api.csproj", "{6E057CEE-CFF1-4799-915F-6419F16EF1FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.Shared.Infrastructure", "Shared\DentalClinic.Shared.Infrastructure\DentalClinic.Shared.Infrastructure.csproj", "{48E73A28-7E0D-46C3-83AD-F8036CE9A326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Shared.Infrastructure", "Shared\DentalClinic.Shared.Infrastructure\DentalClinic.Shared.Infrastructure.csproj", "{48E73A28-7E0D-46C3-83AD-F8036CE9A326}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +51,6 @@ Global
 		{04595D40-F4DA-42C5-ADC0-588C2C7C1510}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04595D40-F4DA-42C5-ADC0-588C2C7C1510}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04595D40-F4DA-42C5-ADC0-588C2C7C1510}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3ADC6D3E-26BD-4137-91C6-C9944782C6C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3ADC6D3E-26BD-4137-91C6-C9944782C6C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3ADC6D3E-26BD-4137-91C6-C9944782C6C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3ADC6D3E-26BD-4137-91C6-C9944782C6C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1136C1AD-D91A-4C0D-93C5-E640C02BCB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1136C1AD-D91A-4C0D-93C5-E640C02BCB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1136C1AD-D91A-4C0D-93C5-E640C02BCB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,10 +79,6 @@ Global
 		{1767E8EB-1FB9-4AEB-8D90-35EDDE390809}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1767E8EB-1FB9-4AEB-8D90-35EDDE390809}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1767E8EB-1FB9-4AEB-8D90-35EDDE390809}.Release|Any CPU.Build.0 = Release|Any CPU
-		{66A1CDBF-9890-48E1-815B-40173095D25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66A1CDBF-9890-48E1-815B-40173095D25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66A1CDBF-9890-48E1-815B-40173095D25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66A1CDBF-9890-48E1-815B-40173095D25E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6E057CEE-CFF1-4799-915F-6419F16EF1FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6E057CEE-CFF1-4799-915F-6419F16EF1FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E057CEE-CFF1-4799-915F-6419F16EF1FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -106,7 +94,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{04595D40-F4DA-42C5-ADC0-588C2C7C1510} = {A8A131FB-A9A9-4F18-AF06-F6A2E3136B31}
 		{3C1BB15B-983D-4282-9FE8-A1CB67739617} = {8BA8F750-8EE1-46E0-B2A3-11CCC77C83A5}
-		{3ADC6D3E-26BD-4137-91C6-C9944782C6C5} = {3C1BB15B-983D-4282-9FE8-A1CB67739617}
 		{1136C1AD-D91A-4C0D-93C5-E640C02BCB7D} = {3C1BB15B-983D-4282-9FE8-A1CB67739617}
 		{BE42B4E1-70FE-4BCE-8096-762B6C48CE58} = {3C1BB15B-983D-4282-9FE8-A1CB67739617}
 		{96262F72-4058-4A59-910F-832855DAA9CD} = {3C1BB15B-983D-4282-9FE8-A1CB67739617}
@@ -116,7 +103,6 @@ Global
 		{05310A1F-7652-446E-8560-1C5CFD6CD90D} = {8BA8F750-8EE1-46E0-B2A3-11CCC77C83A5}
 		{2F5BEA75-9D29-4E5D-8F82-A286F23FE262} = {05310A1F-7652-446E-8560-1C5CFD6CD90D}
 		{1767E8EB-1FB9-4AEB-8D90-35EDDE390809} = {05310A1F-7652-446E-8560-1C5CFD6CD90D}
-		{66A1CDBF-9890-48E1-815B-40173095D25E} = {05310A1F-7652-446E-8560-1C5CFD6CD90D}
 		{6E057CEE-CFF1-4799-915F-6419F16EF1FF} = {05310A1F-7652-446E-8560-1C5CFD6CD90D}
 		{48E73A28-7E0D-46C3-83AD-F8036CE9A326} = {A8A131FB-A9A9-4F18-AF06-F6A2E3136B31}
 	EndGlobalSection
