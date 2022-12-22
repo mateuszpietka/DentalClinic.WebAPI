@@ -3,7 +3,7 @@ using DentalClinic.VisitSchedule.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DentalClinic.Shared.Infrastructure.Configurations;
+namespace DentalClinic.Shared.Infrastructure.UsersModule.Configurations;
 
 internal class UserConfiguration : IEntityTypeConfiguration<User>
 {

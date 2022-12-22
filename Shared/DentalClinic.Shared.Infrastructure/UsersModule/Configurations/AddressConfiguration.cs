@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DentalClinic.Shared.Infrastructure.Configurations;
+namespace DentalClinic.Shared.Infrastructure.UsersModule.Configurations;
 
 internal class AddressConfiguration : IEntityTypeConfiguration<Address>
 {
