@@ -13,6 +13,10 @@ public static class Extensions
         services.AddMediatR(typeof(Extensions));
         services.AddAutoMapper(typeof(Extensions));
         services.AddScoped<IValidator<CreateFirstVisitDto>, CreateFirstVisitDtoValidator>();
+        services.AddScoped<IValidator<CreateVisitDto>, CreateVisitDtoValidator>();
+        services.AddScoped<IValidator<DoctorVisitScheduleFilterDto>, DoctorVisitScheduleFilterDtoValidator>();
+        services.AddScoped<IValidator<PatientVisitScheduleFilterDto>, PatientVisitScheduleFilterDtoValidator>();
+        services.AddScoped<IValidator<ReceptionistVisitScheduleFilterDto>, ReceptionistVisitScheduleFilterDtoValidator>();
 
         return services;
     }
