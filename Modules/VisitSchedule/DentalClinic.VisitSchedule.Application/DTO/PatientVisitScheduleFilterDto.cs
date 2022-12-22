@@ -2,7 +2,7 @@
 
 public class PatientVisitScheduleFilterDto
 {
-    public long PatientIds { get; set; }
+    public long PatientId { get; set; }
     public DateTime DateFrom { get; set; }
     public DateTime DateTo { get; set; }
 }

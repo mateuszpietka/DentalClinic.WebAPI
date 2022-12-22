@@ -5,7 +5,7 @@ internal class PatientVisitScheduleFilterDtoValidator : AbstractValidator<Patien
 {
 	public PatientVisitScheduleFilterDtoValidator()
 	{
-		RuleFor(x => x.PatientIds)
+		RuleFor(x => x.PatientId)
 			.NotEmpty()
             .NotNull();
 
