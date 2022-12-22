@@ -9,5 +9,8 @@ internal class VisitMappingProfile : Profile
     {
         CreateMap<CreateFirstVisitDto, Visit>()
             .ForMember(x => x.IsFirstVisit, c => c.MapFrom(s => true));
+
+        CreateMap<CreateVisitDto, Visit>()
+            .ForMember(x => x.IsFirstVisit, c => c.MapFrom(s => false));
     }
 }

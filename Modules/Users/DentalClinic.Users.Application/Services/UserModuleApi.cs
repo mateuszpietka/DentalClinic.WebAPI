@@ -1,4 +1,5 @@
-﻿using DentalClinic.Users.Application.Queries;
+﻿using AutoMapper;
+using DentalClinic.Users.Application.Queries;
 using DentalClinic.Users.Shared;
 using DentalClinic.Users.Shared.DTO;
 using MediatR;
@@ -7,10 +8,12 @@ namespace DentalClinic.Users.Application.Services;
 internal class UserModuleApi : IUserModuleApi
 {
     private readonly IMediator _mediator;
+    private readonly IMapper _mapper;
 
-    public UserModuleApi(IMediator mediator)
+    public UserModuleApi(IMediator mediator, IMapper mapper)
     {
         _mediator = mediator;
+        _mapper = mapper;
     }
 
     public async Task<DoctorDto> GetDoctorAsync(long id)
@@ -22,13 +25,6 @@ internal class UserModuleApi : IUserModuleApi
     {
         var patientDetails = await _mediator.Send(new GetPatientQuery(id));
 
-        return new PatientDto()
-        {
-            Id = id,
-            FirstName = patientDetails.FirstName,
-            LastName = patientDetails.LastName,
-            PersonalIdNumber = patientDetails.PersonalIdNumber,
-            Email = patientDetails.Email,
-        };
+        return _mapper.Map<PatientDto>(patientDetails);
     }
 }

@@ -20,6 +20,8 @@ internal class UserMappingProfile : Profile
             .ForMember(x => x.PostalCode, c => c.MapFrom(s => s.Address != null ? s.Address.PostalCode : string.Empty))
             .ForMember(x => x.City, c => c.MapFrom(s => s.Address != null ? s.Address.City : string.Empty));
 
+        CreateMap<PatientDetailsDto, PatientDto>();
+
         CreateMap<User, DoctorDto>();
     }
 }
