@@ -43,4 +43,13 @@ public class ScheduleController : ControllerBase
 
         return Ok(visitSchedule);
     }
+
+    [HttpGet("freeDates")]
+    [Authorize(Roles = "Receptionist, Patient")]
+    public async Task<ActionResult<FreeDatesDto>> GetFreeDates([FromBody] FreeDatesFilterDto freeDatesFilterDto)
+    {
+        var freeDatesDto = await _mediator.Send(new GetFreeDatesQuery(freeDatesFilterDto));
+
+        return Ok(freeDatesDto);
+    }
 }
