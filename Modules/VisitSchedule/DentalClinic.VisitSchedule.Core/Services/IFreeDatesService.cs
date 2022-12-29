@@ -2,7 +2,7 @@
 
 namespace DentalClinic.VisitSchedule.Core.Services;
 
-public interface IFreeDatesServices
+public interface IFreeDatesService
 {
     Task<IEnumerable<DateTime>> GetFreeDates(long doctorId, VisitType visitTypeId, DateTime dateFrom, DateTime dateTo);
 }

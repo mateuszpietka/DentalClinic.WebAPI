@@ -10,11 +10,11 @@ namespace DentalClinic.VisitSchedule.Application.Queries.Handlers;
 internal class GetFreeDatesQueryHandler : IRequestHandler<GetFreeDatesQuery, FreeDatesDto>
 {
     private readonly IMapper _mapper;
-    private readonly IFreeDatesServices _freeDatesServices;
+    private readonly IFreeDatesService _freeDatesServices;
     private readonly IUserModuleApi _userModuleApi;
     private readonly IVisitTypeRepository _visitTypeRepository;
 
-    public GetFreeDatesQueryHandler(IMapper mapper, IFreeDatesServices freeDatesServices, IUserModuleApi userModuleApi, IVisitTypeRepository visitTypeRepository)
+    public GetFreeDatesQueryHandler(IMapper mapper, IFreeDatesService freeDatesServices, IUserModuleApi userModuleApi, IVisitTypeRepository visitTypeRepository)
     {
         _mapper = mapper;
         _freeDatesServices = freeDatesServices;
