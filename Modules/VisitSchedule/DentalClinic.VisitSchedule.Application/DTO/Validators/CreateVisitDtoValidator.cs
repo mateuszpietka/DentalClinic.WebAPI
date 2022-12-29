@@ -3,10 +3,10 @@
 namespace DentalClinic.VisitSchedule.Application.DTO.Validators;
 internal class CreateVisitDtoValidator : AbstractValidator<CreateVisitDto>
 {
-	public CreateVisitDtoValidator()
-	{
-		RuleFor(x => x.PatientId)
-			.NotEmpty()
+    public CreateVisitDtoValidator()
+    {
+        RuleFor(x => x.PatientId)
+            .NotEmpty()
             .NotNull();
 
         RuleFor(x => x.DoctorId)
@@ -15,7 +15,8 @@ internal class CreateVisitDtoValidator : AbstractValidator<CreateVisitDto>
 
         RuleFor(x => x.StartDate)
             .NotEmpty()
-            .NotNull();
+            .NotNull()
+            .Must(x => x.Minute == 0 && x.Second == 0 && x.Millisecond == 0);
 
         RuleFor(x => x.VisitTypeId)
             .NotEmpty()

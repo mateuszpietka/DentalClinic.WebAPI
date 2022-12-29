@@ -15,7 +15,8 @@ internal class CreateFirstVisitDtoValidator : AbstractValidator<CreateFirstVisit
 
         RuleFor(x => x.StartDate)
             .NotEmpty()
-            .NotNull();
+            .NotNull()
+            .Must(x => x.Minute == 0 && x.Second == 0 && x.Millisecond == 0);
 
         RuleFor(x => x.VisitTypeId)
             .NotEmpty()
