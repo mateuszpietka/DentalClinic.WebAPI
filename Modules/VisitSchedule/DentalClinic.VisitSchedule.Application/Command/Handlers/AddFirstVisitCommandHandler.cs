@@ -36,7 +36,7 @@ internal class AddFirstVisitCommandHandler : IRequestHandler<AddFirstVisitComman
         var patient = await _userModuleApi.GetPatientAsync(firstVisitDto.PatientId);
 
         if (patient.IsConfirmed)
-            throw new PatientConfirmedException("Only an unconfirmed patient can add the first visit");
+            throw new PatientConfirmedException();
 
         if ((await _visitRepository.GetAllAsync(x => x.PatientId == patient.Id && x.IsFirstVisit == true)).Any())
             throw new FirsVistiAlreadyExistsException();

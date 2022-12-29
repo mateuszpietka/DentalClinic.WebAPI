@@ -3,8 +3,8 @@
 namespace DentalClinic.VisitSchedule.Core.Exceptions;
 public class PatientConfirmedException : CustomException
 {
-    public PatientConfirmedException(string message) 
-        : base(message)
+    public PatientConfirmedException() 
+        : base("Only an unconfirmed patient can add the first visit")
     {
     }
 }
