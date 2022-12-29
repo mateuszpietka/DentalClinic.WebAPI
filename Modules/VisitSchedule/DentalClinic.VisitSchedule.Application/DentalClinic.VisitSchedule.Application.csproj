@@ -15,5 +15,11 @@
     <ProjectReference Include="..\..\Users\DentalClinic.Users.Shared\DentalClinic.Users.Shared.csproj" />
     <ProjectReference Include="..\DentalClinic.VisitSchedule.Core\DentalClinic.VisitSchedule.Core.csproj" />
   </ItemGroup>
+	
+  <ItemGroup>
+	<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+		<_Parameter1>VisitSchedule.Tests.Unit</_Parameter1>
+	</AssemblyAttribute>
+  </ItemGroup>
 
 </Project>

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using DentalClinic.Users.Shared;
+﻿using DentalClinic.Users.Shared;
 using DentalClinic.VisitSchedule.Application.DTO;
 using DentalClinic.VisitSchedule.Core.Exceptions;
 using DentalClinic.VisitSchedule.Core.Repositories;
@@ -9,14 +8,12 @@ using MediatR;
 namespace DentalClinic.VisitSchedule.Application.Queries.Handlers;
 internal class GetFreeDatesQueryHandler : IRequestHandler<GetFreeDatesQuery, FreeDatesDto>
 {
-    private readonly IMapper _mapper;
     private readonly IFreeDatesService _freeDatesServices;
     private readonly IUserModuleApi _userModuleApi;
     private readonly IVisitTypeRepository _visitTypeRepository;
 
-    public GetFreeDatesQueryHandler(IMapper mapper, IFreeDatesService freeDatesServices, IUserModuleApi userModuleApi, IVisitTypeRepository visitTypeRepository)
+    public GetFreeDatesQueryHandler(IFreeDatesService freeDatesServices, IUserModuleApi userModuleApi, IVisitTypeRepository visitTypeRepository)
     {
-        _mapper = mapper;
         _freeDatesServices = freeDatesServices;
         _userModuleApi = userModuleApi;
         _visitTypeRepository = visitTypeRepository;

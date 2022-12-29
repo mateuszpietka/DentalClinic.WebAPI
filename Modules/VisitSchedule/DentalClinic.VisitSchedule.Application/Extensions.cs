@@ -21,6 +21,8 @@ public static class Extensions
         services.AddScoped<IValidator<ReceptionistVisitScheduleFilterDto>, ReceptionistVisitScheduleFilterDtoValidator>();
         services.AddScoped<IValidator<FreeDatesFilterDto>, FreeDatesFilterDtoValidator>();
         services.AddScoped<IVisitScheduleService, VisitScheduleService>();
+        services.AddScoped<IFreeDatesService, FreeDatesService>();
+        services.AddScoped<IWorkHoursService, WorkHoursService>();
 
         return services;
     }

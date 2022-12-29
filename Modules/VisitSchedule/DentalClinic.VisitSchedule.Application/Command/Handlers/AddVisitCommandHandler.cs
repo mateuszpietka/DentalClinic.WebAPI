@@ -40,7 +40,7 @@ internal class AddVisitCommandHandler : IRequestHandler<AddVisitCommand, long>
         if (visitType == null)
             throw new VisitTypeNotFoundException();
 
-        //sprawdzenie czy termin jest wolny
+        //sprawdzenie czy termin jest wolny czyli sprawdzić czy w tym samym czasie pacjent nie ma wizyty i czy w tym samym czasie lekarz nie ma wizyty
 
         var visit = _mapper.Map<Visit>(request.VisitDto);
         visit.VisitType = visitType;
