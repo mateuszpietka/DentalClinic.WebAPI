@@ -23,8 +23,6 @@ internal class GetDoctorVisitScheduleQueryHandler : IRequestHandler<GetDoctorVis
     {
         var visitScheduleFilter = request.VisitScheduleFilter;
         await _userModuleApi.GetDoctorAsync(visitScheduleFilter.DoctorId);
-        //czy doctorId jest tym samym co w tokenie
-
         var visitsToSchedule = await _visitScheduleService.GetDoctorVisitSchedule(visitScheduleFilter.DoctorId, visitScheduleFilter.DateFrom, visitScheduleFilter.DateTo);
         var visitSchedule = _mapper.Map<VisitScheduleDto>(visitsToSchedule);
 

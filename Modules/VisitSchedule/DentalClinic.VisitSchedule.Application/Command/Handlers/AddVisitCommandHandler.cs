@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DentalClinic.Shared.Abstarctions.Services;
 using DentalClinic.Users.Shared;
 using DentalClinic.VisitSchedule.Core.Entities;
 using DentalClinic.VisitSchedule.Core.Exceptions;
@@ -15,6 +16,7 @@ internal class AddVisitCommandHandler : IRequestHandler<AddVisitCommand, long>
     private readonly IUserModuleApi _userModuleApi;
     private readonly IFreeDatesService _freeDatesService;
     private readonly IVisitScheduleService _visitScheduleService;
+    private readonly IUserContextService _userContextService;
 
     public AddVisitCommandHandler(
         IMapper mapper,
@@ -22,7 +24,8 @@ internal class AddVisitCommandHandler : IRequestHandler<AddVisitCommand, long>
         IVisitTypeRepository visitTypeRepository,
         IUserModuleApi userModuleApi,
         IFreeDatesService freeDatesService,
-        IVisitScheduleService visitScheduleService)
+        IVisitScheduleService visitScheduleService,
+        IUserContextService userContextService)
     {
         _mapper = mapper;
         _visitRepository = visitRepository;
@@ -30,15 +33,18 @@ internal class AddVisitCommandHandler : IRequestHandler<AddVisitCommand, long>
         _userModuleApi = userModuleApi;
         _freeDatesService = freeDatesService;
         _visitScheduleService = visitScheduleService;
+        _userContextService = userContextService;
     }
 
     public async Task<long> Handle(AddVisitCommand request, CancellationToken cancellationToken)
     {
         var visitDto = request.VisitDto;
+
+        if (_userContextService.RoleName == "Patient" && (_userContextService.UserId == null || _userContextService.UserId != visitDto.PatientId))
+            throw new ForbiddenException();
+
         await _userModuleApi.GetDoctorAsync(request.VisitDto.DoctorId);
         var patient = await _userModuleApi.GetPatientAsync(visitDto.PatientId);
-
-        //jeśli dodaje pacjent to sprawdzić czy VisitId zgadza się z tym w tokenie
 
         if (!patient.IsConfirmed)
             throw new PatientUnconfirmedException("Only an confirmed patient can add the next visit");

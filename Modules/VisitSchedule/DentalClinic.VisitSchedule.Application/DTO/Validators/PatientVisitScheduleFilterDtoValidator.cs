@@ -1,13 +1,20 @@
-﻿using FluentValidation;
+﻿using DentalClinic.Shared.Abstarctions.Services;
+using DentalClinic.VisitSchedule.Core.Exceptions;
+using FluentValidation;
 
 namespace DentalClinic.VisitSchedule.Application.DTO.Validators;
 internal class PatientVisitScheduleFilterDtoValidator : AbstractValidator<PatientVisitScheduleFilterDto>
 {
-	public PatientVisitScheduleFilterDtoValidator()
+    private readonly IUserContextService _userContextService;
+
+    public PatientVisitScheduleFilterDtoValidator(IUserContextService userContextService)
 	{
-		RuleFor(x => x.PatientId)
+        _userContextService = userContextService;
+
+        RuleFor(x => x.PatientId)
 			.NotEmpty()
-            .NotNull();
+            .NotNull()
+            .Must(x => _userContextService.UserId != null && _userContextService.UserId == x).WithState(x => throw new ForbiddenException());
 
         RuleFor(x => x.DateFrom)
             .NotEmpty()
