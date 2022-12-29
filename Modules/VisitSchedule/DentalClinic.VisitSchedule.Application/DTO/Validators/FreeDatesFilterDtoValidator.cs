@@ -23,6 +23,13 @@ internal class FreeDatesFilterDtoValidator : AbstractValidator<FreeDatesFilterDt
             .NotEmpty()
             .NotNull()
             .GreaterThan(x=>x.DateFrom)
-            .Must(x => x.Minute == 0 && x.Second == 0 && x.Millisecond == 0);
+            .Must(x => x.Minute == 0 && x.Second == 0 && x.Millisecond == 0)
+            .Custom((valueToValidate, context) =>
+            {
+                var dateRange = valueToValidate - context.InstanceToValidate.DateFrom;
+
+                if (dateRange > TimeSpan.FromDays(7))
+                    context.AddFailure("DateTo", "The date range is greater than 7 days");
+            });
     }
 }
