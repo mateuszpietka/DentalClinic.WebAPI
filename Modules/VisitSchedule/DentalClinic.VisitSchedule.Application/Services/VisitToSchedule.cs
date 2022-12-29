@@ -15,4 +15,18 @@ internal class VisitToSchedule : IVisitToSchedule
     public DateTime DateFrom { get; set; }
     public DateTime DateTo { get; set; }
     public bool IsFirstVisit { get; set; }
+
+    public override bool Equals(object obj)
+    {
+        return obj is VisitToSchedule other
+            && Id == other.Id
+            && DateFrom == other.DateFrom
+            && DateTo == other.DateTo
+            && IsFirstVisit == other.IsFirstVisit;
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
 }

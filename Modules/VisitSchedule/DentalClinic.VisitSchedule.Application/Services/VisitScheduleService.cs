@@ -22,7 +22,7 @@ internal class VisitScheduleService : IVisitScheduleService
 
         foreach (var visit in visits)
         {
-            var dateTo = visit.StartDate.AddHours(visit.DoctorId);
+            var dateTo = visit.StartDate.AddHours(visit.VisitType.Hours);
             visitsToSchedule.Add(new VisitToSchedule(visit.Id, visit.StartDate, dateTo, visit.IsFirstVisit));
         }
 
@@ -38,7 +38,7 @@ internal class VisitScheduleService : IVisitScheduleService
 
         foreach (var visit in visits)
         {
-            var dateTo = visit.StartDate.AddHours(visit.DoctorId);
+            var dateTo = visit.StartDate.AddHours(visit.VisitType.Hours);
             visitsToSchedule.Add(new VisitToSchedule(visit.Id, visit.StartDate, dateTo, visit.IsFirstVisit));
         }
 
@@ -67,7 +67,7 @@ internal class VisitScheduleService : IVisitScheduleService
 
         foreach (var visit in visits)
         {
-            var dateTo = visit.StartDate.AddHours(visit.DoctorId);
+            var dateTo = visit.StartDate.AddHours(visit.VisitType.Hours);
             visitsToSchedule.Add(new VisitToSchedule(visit.Id, visit.StartDate, dateTo, visit.IsFirstVisit));
         }
 
