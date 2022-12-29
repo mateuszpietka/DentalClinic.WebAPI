@@ -9,6 +9,9 @@ internal class ReceptionistVisitScheduleFilterDtoValidator : AbstractValidator<R
 			.NotEmpty()
             .NotNull();
 
+        RuleFor(x => x.PatientIds)
+            .NotNull();
+
         RuleFor(x => x.DateFrom)
             .NotEmpty()
             .NotNull()
