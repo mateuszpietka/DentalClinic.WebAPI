@@ -1,5 +1,4 @@
 ﻿using DentalClinic.MedicalRecords.Application.PatientCards.DTO;
-using DentalClinic.MedicalRecords.Application.PatientCards.Queries;
 using DentalClinic.MedicalRecords.Core.PatientCards.Repositories;
 using DentalClinic.Users.Shared;
 using MediatR;
@@ -16,7 +15,7 @@ internal class GetPatientCardQueryHandler : IRequestHandler<GetPatientCardQuery,
         _userModuleApi = userModuleApi;
     }
 
-    async Task<PatientCardDto> IRequestHandler<GetPatientCardQuery, PatientCardDto>.Handle(GetPatientCardQuery request, CancellationToken cancellationToken)
+    public async Task<PatientCardDto> Handle(GetPatientCardQuery request, CancellationToken cancellationToken)
     {
         var patient = await _userModuleApi.GetPatientAsync(request.patientId);
         var patientCard = await _patientCardRepository.GetByPatientIdAsync(request.patientId);
@@ -41,7 +40,7 @@ internal class GetPatientCardQueryHandler : IRequestHandler<GetPatientCardQuery,
             patientsCardAnnotationDtos.Add(patientCardAnnotationDto);
         }
 
-        patientCardDto.PatientCardAnnotations = patientsCardAnnotationDtos.ToArray();
+        patientCardDto.PatientCardAnnotations = patientsCardAnnotationDtos.OrderBy(x => x.CreationDate).ToArray();
 
         return patientCardDto;
     }
