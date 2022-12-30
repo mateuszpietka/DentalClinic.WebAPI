@@ -2,6 +2,7 @@
 using DentalClinic.Users.Core.Entities;
 using DentalClinic.Users.Core.Exceptions;
 using DentalClinic.Users.Core.Repositories;
+using DentalClinic.Users.Shared.Events;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 
@@ -12,13 +13,20 @@ internal class RegisterPatientCommandHandler : IRequestHandler<RegisterPatientCo
     private readonly IUserRepository _userRepository;
     private readonly IRoleRepository _roleRepository;
     private readonly IPasswordHasher<User> _passwordHasher;
+    private readonly IMediator _mediator;
     private readonly IMapper _mapper;
 
-    public RegisterPatientCommandHandler(IMapper mapper, IUserRepository userRepository, IRoleRepository roleRepository, IPasswordHasher<User> passwordHasher)
+    public RegisterPatientCommandHandler(
+        IMapper mapper, 
+        IUserRepository userRepository, 
+        IRoleRepository roleRepository, 
+        IPasswordHasher<User> passwordHasher, 
+        IMediator mediator)
     {
         _userRepository = userRepository;
         _roleRepository = roleRepository;
         _passwordHasher = passwordHasher;
+        _mediator = mediator;
         _mapper = mapper;
     }
 
@@ -36,6 +44,7 @@ internal class RegisterPatientCommandHandler : IRequestHandler<RegisterPatientCo
         user.RoleId = role.Id;
         user.PasswordHash = _passwordHasher.HashPassword(user, request.RegisterPatientDto.Password);
         await _userRepository.AddAsync(user);
+        await _mediator.Publish(new PatientRegistered(user.Id));
 
         return user.Id;
     }

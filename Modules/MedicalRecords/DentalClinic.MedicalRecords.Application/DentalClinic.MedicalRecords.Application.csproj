@@ -5,4 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Users\DentalClinic.Users.Shared\DentalClinic.Users.Shared.csproj" />
+    <ProjectReference Include="..\DentalClinic.MedicalRecords.Core\DentalClinic.MedicalRecords.Core.csproj" />
+  </ItemGroup>
+
 </Project>
