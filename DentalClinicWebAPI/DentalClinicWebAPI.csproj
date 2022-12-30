@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Modules\MedicalRecords\DentalClinic.MedicalRecords.Api\DentalClinic.MedicalRecords.Api.csproj" />
     <ProjectReference Include="..\Modules\Users\DentalClinic.Users.Api\DentalClinic.Users.Api.csproj" />
     <ProjectReference Include="..\Modules\VisitSchedule\DentalClinic.VisitSchedule.Api\DentalClinic.VisitSchedule.Api.csproj" />
     <ProjectReference Include="..\Shared\DentalClinic.Shared.Core\DentalClinic.Shared.Core.csproj" />
