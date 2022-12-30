@@ -15,10 +15,10 @@ internal class RoleConfiguration : IEntityTypeConfiguration<Role>
             .HasMaxLength(50);
 
         builder.HasData(
-            new Role(1, "Administrator"),
-            new Role(2, "Doctor"),
-            new Role(3, "Receptionist"),
-            new Role(4, "Patient")
+            new Role(1, Role.Administrator),
+            new Role(2, Role.Doctor),
+            new Role(3, Role.Receptionist),
+            new Role(4, Role.Patient)
             );
     }
 }

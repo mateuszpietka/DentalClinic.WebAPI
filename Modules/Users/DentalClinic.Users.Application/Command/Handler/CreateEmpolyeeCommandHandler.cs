@@ -34,7 +34,7 @@ internal class CreateEmpolyeeCommandHandler : IRequestHandler<CreateEmpolyeeComm
 
         var role = await _roleRepository.GetByNameAsync(createEmployeeDto.RoleName);
 
-        if (role == null || (role.Name != "Doctor" && role.Name != "Receptionist"))
+        if (role == null || (role.Name != Role.Doctor && role.Name != Role.Receptionist))
             throw new IncorrectRoleException();
 
         var user = _mapper.Map<User>(createEmployeeDto);

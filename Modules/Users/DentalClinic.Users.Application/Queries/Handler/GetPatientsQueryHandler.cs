@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DentalClinic.Users.Core.Entities;
 using DentalClinic.Users.Core.Repositories;
 using DentalClinic.Users.Shared.DTO;
 using MediatR;
@@ -18,7 +19,7 @@ internal class GetPatientsQueryHandler : IRequestHandler<GetPatientsQuery, IEnum
 
     public async Task<IEnumerable<PatientDto>> Handle(GetPatientsQuery request, CancellationToken cancellationToken)
     {
-        var patients = await _userRepository.GetAllAsync(x => x.Role.Name == "Patient");
+        var patients = await _userRepository.GetAllAsync(x => x.Role.Name == Role.Patient);
         var patientDtos = _mapper.Map<IEnumerable<PatientDto>>(patients);
 
         return patientDtos;

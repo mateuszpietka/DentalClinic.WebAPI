@@ -30,7 +30,7 @@ internal class RegisterPatientCommandHandler : IRequestHandler<RegisterPatientCo
         if (await _userRepository.AnyAsync(x => x.PersonalIdNumber == request.RegisterPatientDto.PersonalIdNumber))
             throw new PropertyExistsException("personal ID number");
 
-        var role = await _roleRepository.GetByNameAsync("Patient");
+        var role = await _roleRepository.GetByNameAsync(Role.Patient);
         var user = _mapper.Map<User>(request.RegisterPatientDto);
         user.Role = role;
         user.RoleId = role.Id;

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DentalClinic.Users.Core.Entities;
 using DentalClinic.Users.Core.Exceptions;
 using DentalClinic.Users.Core.Repositories;
 using DentalClinic.Users.Shared.DTO;
@@ -21,7 +22,7 @@ internal class GetDoctroQueryHandler : IRequestHandler<GetDoctorQuery, DoctorDto
     {
         var doctor = await _userRepository.GetByIdAsync(request.DoctorId);
 
-        if (doctor == null || doctor.Role.Name != "Doctor")
+        if (doctor == null || doctor.Role.Name != Role.Doctor)
             throw new UserNotFoundException();
 
         var doctorDto = _mapper.Map<DoctorDto>(doctor);

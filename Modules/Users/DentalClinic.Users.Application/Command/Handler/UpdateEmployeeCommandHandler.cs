@@ -20,7 +20,7 @@ internal class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeComm
     {
         var userToUpdate = await _userRepository.GetByIdAsync(request.UpdateEmployeeDto.EmployeeId);
 
-        if (userToUpdate == null || (userToUpdate.Role.Name != "Doctor" && userToUpdate.Role.Name != "Receptionist"))
+        if (userToUpdate == null || (userToUpdate.Role.Name != Role.Doctor && userToUpdate.Role.Name != Role.Receptionist))
             throw new UserNotFoundException();
 
         userToUpdate.FirstName = request.UpdateEmployeeDto.FirstName;

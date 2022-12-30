@@ -1,5 +1,4 @@
 ﻿using DentalClinic.Users.Core.Entities;
-using DentalClinic.VisitSchedule.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
