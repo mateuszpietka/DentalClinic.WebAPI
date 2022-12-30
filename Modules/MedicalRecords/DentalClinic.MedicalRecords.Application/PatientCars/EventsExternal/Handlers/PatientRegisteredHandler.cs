@@ -4,7 +4,7 @@ using DentalClinic.MedicalRecords.Core.PatientCards.Repositories;
 using DentalClinic.Users.Shared.Events;
 using MediatR;
 
-namespace DentalClinic.MedicalRecords.Application.EventsExternal.Handlers;
+namespace DentalClinic.MedicalRecords.Application.PatientCars.EventsExternal.Handlers;
 internal class PatientRegisteredHandler : INotificationHandler<PatientRegistered>
 {
     private readonly IPatientCardRepository _patientCardRepository;
@@ -19,9 +19,9 @@ internal class PatientRegisteredHandler : INotificationHandler<PatientRegistered
         if ((await _patientCardRepository.GetAllAsync(x => x.PatientId == notification.PatientId)).Any())
             throw new PatientCardExistsException();
 
-        var patientCard = new PatientCard() 
-        { 
-            PatientId = notification.PatientId 
+        var patientCard = new PatientCard()
+        {
+            PatientId = notification.PatientId
         };
 
         await _patientCardRepository.AddAsync(patientCard);
