@@ -18,4 +18,9 @@ internal class VisitRepository : GenericRepositoryBase<Visit, long>, IVisitRepos
     {
         return await _table.Include(x=>x.VisitType).Where(predicate).ToListAsync();
     }
+
+    public override async Task<Visit> GetByIdAsync(long id)
+    {
+        return await _table.Include(x => x.VisitType).FirstOrDefaultAsync(x => x.Id == id);
+    }
 }

@@ -12,5 +12,8 @@ internal class VisitMappingProfile : Profile
 
         CreateMap<CreateVisitDto, Visit>()
             .ForMember(x => x.IsFirstVisit, c => c.MapFrom(s => false));
+
+        CreateMap<Visit, VisitDetailsDto>()
+            .ForMember(x => x.VisitType, c => c.MapFrom(s => s.VisitType.Description));
     }
 }

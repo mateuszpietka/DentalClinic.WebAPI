@@ -1,5 +1,6 @@
 ﻿using DentalClinic.VisitSchedule.Application.Command;
 using DentalClinic.VisitSchedule.Application.DTO;
+using DentalClinic.VisitSchedule.Application.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,15 @@ public class VisitController : ControllerBase
         await _mediator.Send(new AddVisitCommand(createVisitDto));
 
         return Ok();
+    }
+
+    [HttpGet("{id}")]
+    [Authorize(Roles = "Doctor")]
+    public async Task<ActionResult<VisitDetailsDto>> GetVisitDetails([FromRoute] long id)
+    {
+        var visitDetails = await _mediator.Send(new GetVisitDetilsQuery(id));
+
+        return Ok(visitDetails);
     }
 
     [HttpDelete("{id}")]

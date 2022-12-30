@@ -12,11 +12,8 @@ namespace DentalClinicWebAPI
     {
         public static void Main(string[] args)
         {
-            // BUILDER
             var builder = WebApplication.CreateBuilder(args);
             var configuration = builder.Configuration;
-
-            //
             builder.Services.AddErrorHandling();
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddInfrastructure(configuration);
@@ -24,7 +21,6 @@ namespace DentalClinicWebAPI
             builder.Services.AddUsersModule(configuration);
             builder.Services.AddVisitScheduleModule();
             builder.Services.AddMedicalRecordsModule();
-            //
             builder.Services.AddControllers();
             builder.Services.AddCors(options =>
             {
@@ -33,7 +29,7 @@ namespace DentalClinicWebAPI
                     builder.AllowAnyOrigin();
                 });
             });
-            // APP
+            
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
@@ -45,12 +41,10 @@ namespace DentalClinicWebAPI
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
-            //
             app.UseSharedModule();
             app.UseUsersModule();
             app.UseVisitScheduleModule();
             app.UseMedicalRecordsModule();
-            //
             app.MapControllers();
             app.Run();
         }
