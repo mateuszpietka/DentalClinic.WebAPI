@@ -2,6 +2,7 @@
 
 public class PatientCardAnnotation
 {
+    public long Id { get; set; }
     public long PatientCardId { get; set; }
     public long DoctorId { get; set; }
     public DateTime CreationDate { get; set; }

@@ -1,4 +1,6 @@
-﻿using DentalClinic.Shared.Infrastructure.Context;
+﻿using DentalClinic.MedicalRecords.Core.PatientCards.Repositories;
+using DentalClinic.Shared.Infrastructure.Context;
+using DentalClinic.Shared.Infrastructure.MedicalRecordsModule.PatientCards.Repositories;
 using DentalClinic.Shared.Infrastructure.Repositories;
 using DentalClinic.Users.Core.Repositories;
 using DentalClinic.VisitSchedule.Core.Repositories;
@@ -17,6 +19,7 @@ public static class Extensions
         services.AddScoped<IRoleRepository, RoleRepository>();
         services.AddScoped<IVisitRepository, VisitRepository>();
         services.AddScoped<IVisitTypeRepository, VisitTypeRepository>();
+        services.AddScoped<IPatientCardRepository, PatientCardRepository>();
 
         return services;
     }

@@ -1,7 +1,7 @@
-﻿using DentalClinic.Users.Core.Entities;
+﻿using DentalClinic.MedicalRecords.Core.PatientCards.Entities;
+using DentalClinic.Users.Core.Entities;
 using DentalClinic.VisitSchedule.Core.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace DentalClinic.Shared.Infrastructure.Context;
 
@@ -18,6 +18,8 @@ internal class DentalClinicDbContext : DbContext
     public DbSet<Address> Addresses { get; set; }
     public DbSet<Visit> Visits { get; set; }
     public DbSet<VisitType> VisitTypes { get; set; }
+    public DbSet<PatientCard> PatientCards { get; set; }
+    public DbSet<PatientCardAnnotation> PatientCardAnnotations { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
