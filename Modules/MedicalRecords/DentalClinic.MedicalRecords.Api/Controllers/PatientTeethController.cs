@@ -35,6 +35,15 @@ public class PatientTeethController : ControllerBase
         return Ok();
     }
 
+    [HttpGet("possibleToMark")]
+    [Authorize(Roles = "Doctor")]
+    public async Task<ActionResult<IEnumerable<ToothDto>>> GetAllPossibleTeeth()
+    {
+        var possibleTeeth = await _mediator.Send(new GetAllPossibleTeethQuery());
+
+        return Ok(possibleTeeth);
+    }
+
     [HttpGet("{patientId}")]
     [Authorize(Roles = "Patient, Doctor")]
     public async Task<ActionResult<PatientTeethConditionDto>> GetPatientTeethCondition([FromRoute] long patientId)
