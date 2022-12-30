@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
 
-namespace DentalClinic.MedicalRecords.Application.PatientCars.DTO.Validators;
+namespace DentalClinic.MedicalRecords.Application.PatientCards.DTO.Validators;
 internal class AddPatientCardAnnotationDtoValidator : AbstractValidator<AddPatientCardAnnotationDto>
 {
     public AddPatientCardAnnotationDtoValidator()
     {
-        RuleFor(x=>x.PatientId)
+        RuleFor(x => x.PatientId)
             .NotNull()
             .NotEmpty();
 

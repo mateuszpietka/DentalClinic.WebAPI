@@ -1,4 +1,4 @@
-﻿namespace DentalClinic.MedicalRecords.Application.PatientCars.DTO;
+﻿namespace DentalClinic.MedicalRecords.Application.PatientCards.DTO;
 public class PatientCardAnnotationDto
 {
     public long Id { get; set; }

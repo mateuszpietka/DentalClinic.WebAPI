@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
+using DentalClinic.MedicalRecords.Application.PatientCards.Command;
 using DentalClinic.MedicalRecords.Core.PatientCards.Entities;
 using DentalClinic.MedicalRecords.Core.PatientCards.Exceptions;
 using DentalClinic.MedicalRecords.Core.PatientCards.Repositories;
 using DentalClinic.Users.Shared;
 using MediatR;
 
-namespace DentalClinic.MedicalRecords.Application.PatientCars.Command.Handlers;
+namespace DentalClinic.MedicalRecords.Application.PatientCards.Command.Handlers;
 internal class AddPatientCardAnnotationCommandHandler : IRequestHandler<AddPatientCardAnnotationCommand>
 {
     private readonly IMapper _mapper;

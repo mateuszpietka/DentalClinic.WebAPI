@@ -1,5 +1,5 @@
-﻿using DentalClinic.MedicalRecords.Application.PatientCars.DTO;
-using DentalClinic.MedicalRecords.Application.PatientCars.DTO.Validators;
+﻿using DentalClinic.MedicalRecords.Application.PatientCards.DTO;
+using DentalClinic.MedicalRecords.Application.PatientCards.DTO.Validators;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;

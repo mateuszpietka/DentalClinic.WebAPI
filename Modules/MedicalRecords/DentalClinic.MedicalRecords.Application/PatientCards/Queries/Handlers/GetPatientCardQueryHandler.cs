@@ -1,9 +1,10 @@
-﻿using DentalClinic.MedicalRecords.Application.PatientCars.DTO;
+﻿using DentalClinic.MedicalRecords.Application.PatientCards.DTO;
+using DentalClinic.MedicalRecords.Application.PatientCards.Queries;
 using DentalClinic.MedicalRecords.Core.PatientCards.Repositories;
 using DentalClinic.Users.Shared;
 using MediatR;
 
-namespace DentalClinic.MedicalRecords.Application.PatientCars.Queries.Handlers;
+namespace DentalClinic.MedicalRecords.Application.PatientCards.Queries.Handlers;
 internal class GetPatientCardQueryHandler : IRequestHandler<GetPatientCardQuery, PatientCardDto>
 {
     private readonly IPatientCardRepository _patientCardRepository;

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using DentalClinic.MedicalRecords.Application.PatientCars.DTO;
+using DentalClinic.MedicalRecords.Application.PatientCards.DTO;
 using DentalClinic.MedicalRecords.Core.PatientCards.Entities;
 
-namespace DentalClinic.MedicalRecords.Application.PatientCars.MappingProfiles;
+namespace DentalClinic.MedicalRecords.Application.PatientCards.MappingProfiles;
 internal class PatientCardAnnotationMappingProfile : Profile
 {
     public PatientCardAnnotationMappingProfile()

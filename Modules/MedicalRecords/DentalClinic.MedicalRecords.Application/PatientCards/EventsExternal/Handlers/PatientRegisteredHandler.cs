@@ -4,7 +4,7 @@ using DentalClinic.MedicalRecords.Core.PatientCards.Repositories;
 using DentalClinic.Users.Shared.Events;
 using MediatR;
 
-namespace DentalClinic.MedicalRecords.Application.PatientCars.EventsExternal.Handlers;
+namespace DentalClinic.MedicalRecords.Application.PatientCards.EventsExternal.Handlers;
 internal class PatientRegisteredHandler : INotificationHandler<PatientRegistered>
 {
     private readonly IPatientCardRepository _patientCardRepository;

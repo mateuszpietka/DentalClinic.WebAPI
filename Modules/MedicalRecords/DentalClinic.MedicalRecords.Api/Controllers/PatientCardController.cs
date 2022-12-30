@@ -1,6 +1,6 @@
-﻿using DentalClinic.MedicalRecords.Application.PatientCars.Command;
-using DentalClinic.MedicalRecords.Application.PatientCars.DTO;
-using DentalClinic.MedicalRecords.Application.PatientCars.Queries;
+﻿using DentalClinic.MedicalRecords.Application.PatientCards.Command;
+using DentalClinic.MedicalRecords.Application.PatientCards.DTO;
+using DentalClinic.MedicalRecords.Application.PatientCards.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
