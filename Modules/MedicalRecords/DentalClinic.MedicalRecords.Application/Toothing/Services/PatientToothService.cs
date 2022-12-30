@@ -1,4 +1,5 @@
-﻿using DentalClinic.MedicalRecords.Core.Toothing.Entities;
+﻿using DentalClinic.MedicalRecords.Application.Toothing.Enums;
+using DentalClinic.MedicalRecords.Core.Toothing.Entities;
 using DentalClinic.MedicalRecords.Core.Toothing.Repositories;
 using DentalClinic.MedicalRecords.Core.Toothing.Services;
 
@@ -27,5 +28,15 @@ internal class PatientToothService : IPatientToothService
             toothToUpdate.Condition = patientTooth.Condition;
             await _patientToothRepository.UpdateAsync(toothToUpdate);
         }
+    }
+
+    public async Task<IEnumerable<PatientTooth>> GetPatietnHealthyTeeth(long patientId)
+    {
+        return (await _patientToothRepository.GetPatientTeethAsync(patientId)).Where(x => x.Condition == (int)ConditionType.Healthy);
+    }
+
+    public async Task<IEnumerable<PatientTooth>> GetPatietnSickTeeth(long patientId)
+    {
+        return (await _patientToothRepository.GetPatientTeethAsync(patientId)).Where(x => x.Condition == (int)ConditionType.Sick);
     }
 }
