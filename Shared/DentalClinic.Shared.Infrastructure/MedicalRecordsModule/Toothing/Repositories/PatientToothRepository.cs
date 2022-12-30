@@ -13,6 +13,11 @@ internal class PatientToothRepository :GenericRepositoryBase<PatientTooth, (long
 
     }
 
+    public override async Task<PatientTooth> GetByIdAsync((long patientId, int quadrantCode, int toothNumber) id)
+    {
+        return await _table.FirstOrDefaultAsync(x => x.PatientId == id.patientId && x.QuadrantCode == id.quadrantCode && x.ToothNumber == id.toothNumber);
+    }
+
     public async Task<IEnumerable<PatientTooth>> GetPatientTeethAsync(long patientId)
     {
         return await _table.Where(x => x.PatientId == patientId).ToListAsync();

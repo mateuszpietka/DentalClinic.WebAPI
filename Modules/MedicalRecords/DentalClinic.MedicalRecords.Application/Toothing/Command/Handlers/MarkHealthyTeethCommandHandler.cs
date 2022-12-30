@@ -6,7 +6,7 @@ using DentalClinic.Users.Shared;
 using MediatR;
 
 namespace DentalClinic.MedicalRecords.Application.Toothing.Command.Handlers;
-internal class MarkHealthyTeethCommandHandler : IRequestHandler<MarkSickTeethCommand>
+internal class MarkHealthyTeethCommandHandler : IRequestHandler<MarkHealthyTeethCommand>
 {
     private readonly IMapper _mapper;
     private readonly IPatientToothService _patientToothService;
@@ -19,7 +19,7 @@ internal class MarkHealthyTeethCommandHandler : IRequestHandler<MarkSickTeethCom
         _userModuleApi = userModuleApi;
     }
 
-    public async Task<Unit> Handle(MarkSickTeethCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(MarkHealthyTeethCommand request, CancellationToken cancellationToken)
     {
         var patient = await _userModuleApi.GetPatientAsync(request.MarkTeethDto.PatientId);
         var patientTeeth = _mapper.Map<IEnumerable<PatientTooth>>(request.MarkTeethDto.Teeth);
