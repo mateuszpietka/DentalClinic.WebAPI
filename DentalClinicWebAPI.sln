@@ -39,7 +39,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.Shared.Infrast
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VisitSchedule", "VisitSchedule", "{3A4B1EA5-BFD8-47E2-8356-FCF53B90140B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitSchedule.Tests.Unit", "Tests\VisitSchedule\VisitSchedule.Tests.Unit\VisitSchedule.Tests.Unit.csproj", "{E027B635-D7ED-4B95-809D-7837E57418FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitSchedule.Tests.Unit", "Tests\VisitSchedule\VisitSchedule.Tests.Unit\VisitSchedule.Tests.Unit.csproj", "{E027B635-D7ED-4B95-809D-7837E57418FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MedicalRecords", "MedicalRecords", "{A4126BF4-41B1-4D66-B2C8-1CF7FC3E097A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.MedicalRecords.Api", "Modules\MedicalRecords\DentalClinic.MedicalRecords.Api\DentalClinic.MedicalRecords.Api.csproj", "{28D6C6C6-0504-439B-99EA-AADFE5EBDC7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.MedicalRecords.Application", "Modules\MedicalRecords\DentalClinic.MedicalRecords.Application\DentalClinic.MedicalRecords.Application.csproj", "{4E07D85B-6BDE-4C7B-A65C-12F77CB55C59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.MedicalRecords.Core", "Modules\MedicalRecords\DentalClinic.MedicalRecords.Core\DentalClinic.MedicalRecords.Core.csproj", "{D5F4D824-05FC-494D-85A6-C31042399063}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +103,18 @@ Global
 		{E027B635-D7ED-4B95-809D-7837E57418FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E027B635-D7ED-4B95-809D-7837E57418FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E027B635-D7ED-4B95-809D-7837E57418FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28D6C6C6-0504-439B-99EA-AADFE5EBDC7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D6C6C6-0504-439B-99EA-AADFE5EBDC7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28D6C6C6-0504-439B-99EA-AADFE5EBDC7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28D6C6C6-0504-439B-99EA-AADFE5EBDC7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E07D85B-6BDE-4C7B-A65C-12F77CB55C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E07D85B-6BDE-4C7B-A65C-12F77CB55C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E07D85B-6BDE-4C7B-A65C-12F77CB55C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E07D85B-6BDE-4C7B-A65C-12F77CB55C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F4D824-05FC-494D-85A6-C31042399063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F4D824-05FC-494D-85A6-C31042399063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F4D824-05FC-494D-85A6-C31042399063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F4D824-05FC-494D-85A6-C31042399063}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +135,10 @@ Global
 		{48E73A28-7E0D-46C3-83AD-F8036CE9A326} = {A8A131FB-A9A9-4F18-AF06-F6A2E3136B31}
 		{3A4B1EA5-BFD8-47E2-8356-FCF53B90140B} = {6B9B09D2-3E8A-47FE-AAA5-FFDFEE1DC064}
 		{E027B635-D7ED-4B95-809D-7837E57418FE} = {3A4B1EA5-BFD8-47E2-8356-FCF53B90140B}
+		{A4126BF4-41B1-4D66-B2C8-1CF7FC3E097A} = {8BA8F750-8EE1-46E0-B2A3-11CCC77C83A5}
+		{28D6C6C6-0504-439B-99EA-AADFE5EBDC7E} = {A4126BF4-41B1-4D66-B2C8-1CF7FC3E097A}
+		{4E07D85B-6BDE-4C7B-A65C-12F77CB55C59} = {A4126BF4-41B1-4D66-B2C8-1CF7FC3E097A}
+		{D5F4D824-05FC-494D-85A6-C31042399063} = {A4126BF4-41B1-4D66-B2C8-1CF7FC3E097A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D1521830-319D-4E21-B38F-481F89290CA3}
