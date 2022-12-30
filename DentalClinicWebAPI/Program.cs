@@ -22,6 +22,7 @@ namespace DentalClinicWebAPI
             builder.Services.AddVisitScheduleModule();
             builder.Services.AddMedicalRecordsModule();
             builder.Services.AddControllers();
+            builder.Services.AddSwaggerGen();
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", builder =>
@@ -35,6 +36,11 @@ namespace DentalClinicWebAPI
             if (app.Environment.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.jeson", "Dental Clinic API");
+            });
             app.UseCors("CorsPolicy");
             app.UseErrorHandling();
             app.UseAuthentication();
