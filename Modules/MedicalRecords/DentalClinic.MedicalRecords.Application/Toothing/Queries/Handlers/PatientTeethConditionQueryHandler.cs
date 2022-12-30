@@ -4,7 +4,7 @@ using DentalClinic.MedicalRecords.Core.Toothing.Services;
 using MediatR;
 
 namespace DentalClinic.MedicalRecords.Application.Toothing.Queries.Handlers;
-internal class PatientTeethConditionQueryHandler : IRequestHandler<PatientTeethConditionQuery, PatientTeethConditionDto>
+internal class PatientTeethConditionQueryHandler : IRequestHandler<GetPatientTeethConditionQuery, PatientTeethConditionDto>
 {
     private readonly IMapper _mapper;
     private readonly IPatientToothService _patientToothService;
@@ -15,7 +15,7 @@ internal class PatientTeethConditionQueryHandler : IRequestHandler<PatientTeethC
         _patientToothService = patientToothService;
     }
 
-    public async Task<PatientTeethConditionDto> Handle(PatientTeethConditionQuery request, CancellationToken cancellationToken)
+    public async Task<PatientTeethConditionDto> Handle(GetPatientTeethConditionQuery request, CancellationToken cancellationToken)
     {
         var patientSickTeeth = await _patientToothService.GetPatietnSickTeeth(request.PatientId);
         var patientHealthyTeeth = await _patientToothService.GetPatietnHealthyTeeth(request.PatientId);

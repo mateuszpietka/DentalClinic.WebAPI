@@ -2,4 +2,4 @@
 using MediatR;
 
 namespace DentalClinic.MedicalRecords.Application.Toothing.Queries;
-public record PatientTeethConditionQuery(long PatientId) : IRequest<PatientTeethConditionDto>;
+public record GetPatientTeethConditionQuery(long PatientId) : IRequest<PatientTeethConditionDto>;

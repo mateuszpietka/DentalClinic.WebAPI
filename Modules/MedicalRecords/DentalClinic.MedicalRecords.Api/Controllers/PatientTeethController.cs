@@ -1,5 +1,6 @@
 ﻿using DentalClinic.MedicalRecords.Application.Toothing.Command;
 using DentalClinic.MedicalRecords.Application.Toothing.DTO;
+using DentalClinic.MedicalRecords.Application.Toothing.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -32,5 +33,14 @@ public class PatientTeethController : ControllerBase
         await _mediator.Send(new MarkHealthyTeethCommand(markTeethDto));
 
         return Ok();
+    }
+
+    [HttpGet("{patientId}")]
+    [Authorize(Roles = "Patient, Doctor")]
+    public async Task<ActionResult<PatientTeethConditionDto>> GetPatientTeethCondition([FromRoute] long patientId)
+    {
+        var patientTeethCondition = await _mediator.Send(new GetPatientTeethConditionQuery(patientId));
+
+        return Ok(patientTeethCondition);
     }
 }
