@@ -1,5 +1,6 @@
 ﻿using DentalClinic.MedicalRecords.Application.PatientCars.Command;
 using DentalClinic.MedicalRecords.Application.PatientCars.DTO;
+using DentalClinic.MedicalRecords.Application.PatientCars.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,5 +24,14 @@ public class PatientCardController : ControllerBase
         await _mediator.Send(new AddPatientCardAnnotationCommand(addPatientCardAnnotationDto));
 
         return Ok();
+    }
+
+    [HttpGet("{patientId}")]
+    [Authorize(Roles = "Patient")]
+    public async Task<ActionResult<PatientCardDto>> GetPatientCard([FromRoute] long patientId)
+    {
+        var patientCard = await _mediator.Send(new GetPatientCardQuery(patientId));
+
+        return Ok(patientCard);
     }
 }
