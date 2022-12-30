@@ -1,5 +1,7 @@
 ﻿using DentalClinic.MedicalRecords.Application.PatientCards.DTO;
 using DentalClinic.MedicalRecords.Application.PatientCards.DTO.Validators;
+using DentalClinic.MedicalRecords.Application.Toothing.DTO;
+using DentalClinic.MedicalRecords.Application.Toothing.DTO.Validators;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +15,8 @@ public static class Extensions
         services.AddMediatR(typeof(Extensions));
         services.AddAutoMapper(typeof(Extensions));
         services.AddScoped<IValidator<AddPatientCardAnnotationDto>, AddPatientCardAnnotationDtoValidator>();
+        services.AddScoped<IValidator<ToothDto>, ToothDtoValidaotr>();
+        services.AddScoped<IValidator<MarkTeethDto>, MarkTeethDtoValidator>();
 
         return services;
     }
