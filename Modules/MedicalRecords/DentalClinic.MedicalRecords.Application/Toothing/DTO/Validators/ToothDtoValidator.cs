@@ -2,9 +2,9 @@
 using FluentValidation;
 
 namespace DentalClinic.MedicalRecords.Application.Toothing.DTO.Validators;
-internal class ToothDtoValidaotr : AbstractValidator<ToothDto>
+internal class ToothDtoValidator : AbstractValidator<ToothDto>
 {
-    public ToothDtoValidaotr()
+    public ToothDtoValidator()
     {
         RuleFor(x => x.QuadrantCode)
             .IsInEnum();

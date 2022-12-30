@@ -15,7 +15,7 @@ public static class Extensions
         services.AddMediatR(typeof(Extensions));
         services.AddAutoMapper(typeof(Extensions));
         services.AddScoped<IValidator<AddPatientCardAnnotationDto>, AddPatientCardAnnotationDtoValidator>();
-        services.AddScoped<IValidator<ToothDto>, ToothDtoValidaotr>();
+        services.AddScoped<IValidator<ToothDto>, ToothDtoValidator>();
         services.AddScoped<IValidator<MarkTeethDto>, MarkTeethDtoValidator>();
 
         return services;
