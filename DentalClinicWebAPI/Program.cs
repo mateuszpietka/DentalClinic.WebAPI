@@ -1,10 +1,10 @@
-using DentalClinic.Users.Api;
-using DentalClinic.Shared.Core;
-using FluentValidation.AspNetCore;
-using DentalClinic.Shared.Core.Exceptions;
-using DentalClinic.VisitSchedule.API;
-using DentalClinic.Shared.Infrastructure;
 using DentalClinic.MedicalRecords.Api;
+using DentalClinic.Shared.Core;
+using DentalClinic.Shared.Core.Exceptions;
+using DentalClinic.Shared.Infrastructure;
+using DentalClinic.Users.Api;
+using DentalClinic.VisitSchedule.API;
+using FluentValidation.AspNetCore;
 
 namespace DentalClinicWebAPI
 {
@@ -28,6 +28,8 @@ namespace DentalClinicWebAPI
                 options.AddPolicy("CorsPolicy", builder =>
                 {
                     builder.AllowAnyOrigin();
+                    builder.AllowAnyHeader();
+                    builder.AllowAnyMethod();
                 });
             });
             
