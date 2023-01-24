@@ -27,30 +27,24 @@ internal class VisitTypeConfiguration : IEntityTypeConfiguration<VisitType>
             new VisitType()
             {
                 Id = 2,
-                Description = "Control visit",
-                Hours = 1,
-            },
-            new VisitType()
-            {
-                Id = 3,
                 Description = "Tooth root canal treatment",
                 Hours = 2,
             },
             new VisitType()
             {
-                Id = 4,
+                Id = 3,
                 Description = "Prosthetics",
                 Hours = 2,
             },
             new VisitType()
             {
-                Id = 5,
+                Id = 4,
                 Description = "Putting on an orthodontic appliance",
                 Hours = 2,
             },
             new VisitType()
             {
-                Id = 6,
+                Id = 5,
                 Description = "Tooth extraction",
                 Hours = 1,
             });
