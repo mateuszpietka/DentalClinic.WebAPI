@@ -17,7 +17,7 @@ public class ScheduleController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet("patient")]
+    [HttpPut("patient")]
     [Authorize(Roles = "Patient")]
     public async Task<ActionResult<VisitScheduleDto>> GetVisitSchedule([FromBody] PatientVisitScheduleFilterDto visitScheduleFilterDto)
     {
@@ -26,7 +26,7 @@ public class ScheduleController : ControllerBase
         return Ok(visitSchedule);
     }
 
-    [HttpGet("doctor")]
+    [HttpPut("doctor")]
     [Authorize(Roles = "Doctor")]
     public async Task<ActionResult<VisitScheduleDto>> GetVisitSchedule([FromBody] DoctorVisitScheduleFilterDto visitScheduleFilterDto)
     {
@@ -35,7 +35,7 @@ public class ScheduleController : ControllerBase
         return Ok(visitSchedule);
     }
 
-    [HttpGet("receptionist")]
+    [HttpPut("receptionist")]
     [Authorize(Roles = "Receptionist")]
     public async Task<ActionResult<VisitScheduleDto>> GetVisitSchedule([FromBody] ReceptionistVisitScheduleFilterDto visitScheduleFilterDto)
     {
@@ -44,8 +44,7 @@ public class ScheduleController : ControllerBase
         return Ok(visitSchedule);
     }
 
-    [HttpGet("freeDates")]
-    [Authorize(Roles = "Receptionist, Patient")]
+    [HttpPut("freeDates")]
     public async Task<ActionResult<FreeDatesDto>> GetFreeDates([FromBody] FreeDatesFilterDto freeDatesFilterDto)
     {
         var freeDatesDto = await _mediator.Send(new GetFreeDatesQuery(freeDatesFilterDto));
