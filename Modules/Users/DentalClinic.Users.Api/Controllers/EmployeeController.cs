@@ -1,6 +1,7 @@
 ﻿using DentalClinic.Users.Application.Command;
 using DentalClinic.Users.Application.DTO;
 using DentalClinic.Users.Application.Queries;
+using DentalClinic.Users.Shared.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +10,6 @@ namespace DentalClinic.Users.Api.Controllers;
 
 [Route("api/employee")]
 [ApiController]
-[Authorize(Roles = "Administrator")]
 public class EmployeeController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -19,6 +19,7 @@ public class EmployeeController : ControllerBase
         _mediator = mediator;
     }
 
+    [Authorize(Roles = "Administrator")]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<EmployeeDto>>> GetEmployees()
     {
@@ -27,6 +28,15 @@ public class EmployeeController : ControllerBase
         return Ok(employees);
     }
 
+    [HttpGet("doctor")]
+    public async Task<ActionResult<IEnumerable<DoctorDto>>> GetDoctorList()
+    {
+        var doctors = await _mediator.Send(new GetDoctorsQuery());
+
+        return Ok(doctors);
+    }
+
+    [Authorize(Roles = "Administrator")]
     [HttpPost]
     public async Task<ActionResult> AddEmployee([FromBody] CreateEmployeeDto createEmployeeDto)
     {
@@ -35,6 +45,7 @@ public class EmployeeController : ControllerBase
         return Created("", id);
     }
 
+    [Authorize(Roles = "Administrator")]
     [HttpPut]
     public async Task<ActionResult> UpdateEmployee([FromBody] UpdateEmployeeDto updateEmployeeDto)
     {
@@ -43,6 +54,7 @@ public class EmployeeController : ControllerBase
         return Ok();
     }
 
+    [Authorize(Roles = "Administrator")]
     [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteEmployee([FromRoute] long id)
     {

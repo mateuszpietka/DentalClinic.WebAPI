@@ -22,6 +22,7 @@ internal class UserMappingProfile : Profile
 
         CreateMap<PatientDetailsDto, PatientDto>();
 
-        CreateMap<User, DoctorDto>();
+        CreateMap<User, DoctorDto>()
+            .ForMember(x => x.FullName, c => c.MapFrom(s => $"{s.FirstName} {s.LastName}"));
     }
 }

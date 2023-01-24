@@ -32,7 +32,7 @@ internal class GetPatientCardQueryHandler : IRequestHandler<GetPatientCardQuery,
             var patientCardAnnotationDto = new PatientCardAnnotationDto()
             {
                 Id = patianetCardAnnotation.Id,
-                DoctorFullName = $"{doctor.FirstName} {doctor.LastName}",
+                DoctorFullName = doctor.FullName,
                 CreationDate = patianetCardAnnotation.CreationDate,
                 Contents = patianetCardAnnotation.Contents
             };
