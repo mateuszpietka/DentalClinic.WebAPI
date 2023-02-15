@@ -11,7 +11,6 @@ namespace VisitSchedule.Tests.Unit.Services;
 public class VisitScheduleServiceTests
 {
     private IVisitScheduleService _visitScheduleService;
-    private IVisitRepository _mockVisitRepository;
 
     public VisitScheduleServiceTests()
     {

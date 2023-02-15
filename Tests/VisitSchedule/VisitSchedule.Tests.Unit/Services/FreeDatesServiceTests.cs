@@ -15,9 +15,12 @@ public class FreeDatesServiceTests
         var workHoursService = new WorkHoursService();
 
         var mockVisitScheduleService = new Mock<IVisitScheduleService>();
-        mockVisitScheduleService.Setup(x => x.GetDoctorVisitSchedule(It.IsAny<long>(), It.IsAny<DateTime>(), It.IsAny<DateTime>()))
-                                 .Returns<long, DateTime, DateTime>((id, dateFrom, dateTo) =>
-                                    Task.FromResult(GetVisitToSchedules().AsQueryable().Where(x => x.DateFrom >= dateFrom && x.DateTo <= dateTo).AsEnumerable()));
+        mockVisitScheduleService
+            .Setup(x => x.GetDoctorVisitSchedule(It.IsAny<long>(), It.IsAny<DateTime>(), It.IsAny<DateTime>()))
+            .Returns<long, DateTime, DateTime>((id, dateFrom, dateTo) =>
+            Task.FromResult(GetVisitToSchedules().AsQueryable()
+                                                 .Where(x => x.DateFrom >= dateFrom && x.DateTo <= dateTo)
+                                                 .AsEnumerable()));
 
         _freeDatesService = new FreeDatesService(workHoursService, mockVisitScheduleService.Object);
     }
