@@ -1,5 +1,6 @@
 ﻿using DentalClinic.Users.Application;
 using DentalClinic.Users.Core;
+using DentalClinic.Users.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +13,7 @@ public static class Extensions
     {
         services.AddCoreLayer(configuration);
         services.AddApplicationLayer();
+        services.AddInfrastructureLayer(configuration);
 
         return services;
     }

@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DentalClinic.Users.Application\DentalClinic.Users.Application.csproj" />
     <ProjectReference Include="..\DentalClinic.Users.Core\DentalClinic.Users.Core.csproj" />
+    <ProjectReference Include="..\DentalClinic.Users.Infrastructure\DentalClinic.Users.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

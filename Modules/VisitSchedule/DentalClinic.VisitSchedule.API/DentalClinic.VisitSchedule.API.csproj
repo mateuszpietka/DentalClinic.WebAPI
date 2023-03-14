@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DentalClinic.VisitSchedule.Application\DentalClinic.VisitSchedule.Application.csproj" />
+    <ProjectReference Include="..\DentalClinic.VisitSchedule.Infrastructure\DentalClinic.VisitSchedule.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

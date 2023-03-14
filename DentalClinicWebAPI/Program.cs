@@ -19,8 +19,8 @@ namespace DentalClinicWebAPI
             builder.Services.AddInfrastructure(configuration);
             builder.Services.AddSharedModule();
             builder.Services.AddUsersModule(configuration);
-            builder.Services.AddVisitScheduleModule();
-            builder.Services.AddMedicalRecordsModule();
+            builder.Services.AddVisitScheduleModule(configuration);
+            builder.Services.AddMedicalRecordsModule(configuration);
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen();
             builder.Services.AddCors(options =>

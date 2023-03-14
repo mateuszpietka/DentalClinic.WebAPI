@@ -41,11 +41,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitSchedule.Tests.Unit", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MedicalRecords", "MedicalRecords", "{A4126BF4-41B1-4D66-B2C8-1CF7FC3E097A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.MedicalRecords.Api", "Modules\MedicalRecords\DentalClinic.MedicalRecords.Api\DentalClinic.MedicalRecords.Api.csproj", "{28D6C6C6-0504-439B-99EA-AADFE5EBDC7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.MedicalRecords.Api", "Modules\MedicalRecords\DentalClinic.MedicalRecords.Api\DentalClinic.MedicalRecords.Api.csproj", "{28D6C6C6-0504-439B-99EA-AADFE5EBDC7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.MedicalRecords.Application", "Modules\MedicalRecords\DentalClinic.MedicalRecords.Application\DentalClinic.MedicalRecords.Application.csproj", "{4E07D85B-6BDE-4C7B-A65C-12F77CB55C59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.MedicalRecords.Application", "Modules\MedicalRecords\DentalClinic.MedicalRecords.Application\DentalClinic.MedicalRecords.Application.csproj", "{4E07D85B-6BDE-4C7B-A65C-12F77CB55C59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.MedicalRecords.Core", "Modules\MedicalRecords\DentalClinic.MedicalRecords.Core\DentalClinic.MedicalRecords.Core.csproj", "{D5F4D824-05FC-494D-85A6-C31042399063}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DentalClinic.MedicalRecords.Core", "Modules\MedicalRecords\DentalClinic.MedicalRecords.Core\DentalClinic.MedicalRecords.Core.csproj", "{D5F4D824-05FC-494D-85A6-C31042399063}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.Users.Infrastructure", "Modules\Users\DentalClinic.Users.Infrastructure\DentalClinic.Users.Infrastructure.csproj", "{37BE1E40-2122-4852-B6FB-01BA12728267}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.VisitSchedule.Infrastructure", "Modules\VisitSchedule\DentalClinic.VisitSchedule.Infrastructure\DentalClinic.VisitSchedule.Infrastructure.csproj", "{B75BEAEB-9953-49F6-BCEB-E90710BA2DAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic.MedicalRecords.Infrastructure", "DentalClinic.MedicalRecords.Infrastructure\DentalClinic.MedicalRecords.Infrastructure.csproj", "{80B001C2-9D57-4F87-B32A-4BE26D05E8FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +119,18 @@ Global
 		{D5F4D824-05FC-494D-85A6-C31042399063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5F4D824-05FC-494D-85A6-C31042399063}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5F4D824-05FC-494D-85A6-C31042399063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37BE1E40-2122-4852-B6FB-01BA12728267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37BE1E40-2122-4852-B6FB-01BA12728267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37BE1E40-2122-4852-B6FB-01BA12728267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37BE1E40-2122-4852-B6FB-01BA12728267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75BEAEB-9953-49F6-BCEB-E90710BA2DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75BEAEB-9953-49F6-BCEB-E90710BA2DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75BEAEB-9953-49F6-BCEB-E90710BA2DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75BEAEB-9953-49F6-BCEB-E90710BA2DAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80B001C2-9D57-4F87-B32A-4BE26D05E8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80B001C2-9D57-4F87-B32A-4BE26D05E8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80B001C2-9D57-4F87-B32A-4BE26D05E8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80B001C2-9D57-4F87-B32A-4BE26D05E8FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +154,9 @@ Global
 		{28D6C6C6-0504-439B-99EA-AADFE5EBDC7E} = {A4126BF4-41B1-4D66-B2C8-1CF7FC3E097A}
 		{4E07D85B-6BDE-4C7B-A65C-12F77CB55C59} = {A4126BF4-41B1-4D66-B2C8-1CF7FC3E097A}
 		{D5F4D824-05FC-494D-85A6-C31042399063} = {A4126BF4-41B1-4D66-B2C8-1CF7FC3E097A}
+		{37BE1E40-2122-4852-B6FB-01BA12728267} = {3C1BB15B-983D-4282-9FE8-A1CB67739617}
+		{B75BEAEB-9953-49F6-BCEB-E90710BA2DAA} = {05310A1F-7652-446E-8560-1C5CFD6CD90D}
+		{80B001C2-9D57-4F87-B32A-4BE26D05E8FB} = {A4126BF4-41B1-4D66-B2C8-1CF7FC3E097A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D1521830-319D-4E21-B38F-481F89290CA3}
