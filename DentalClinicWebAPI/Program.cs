@@ -1,7 +1,6 @@
 using DentalClinic.MedicalRecords.Api;
 using DentalClinic.Shared.Core;
 using DentalClinic.Shared.Core.Exceptions;
-using DentalClinic.Shared.Infrastructure;
 using DentalClinic.Users.Api;
 using DentalClinic.VisitSchedule.API;
 using FluentValidation.AspNetCore;
@@ -16,7 +15,6 @@ namespace DentalClinicWebAPI
             var configuration = builder.Configuration;
             builder.Services.AddErrorHandling();
             builder.Services.AddFluentValidationAutoValidation();
-            builder.Services.AddInfrastructure(configuration);
             builder.Services.AddSharedModule();
             builder.Services.AddUsersModule(configuration);
             builder.Services.AddVisitScheduleModule(configuration);
