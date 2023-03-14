@@ -4,6 +4,7 @@ using DentalClinic.VisitSchedule.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DentalClinic.VisitSchedule.Infrastructure.Migrations
 {
     [DbContext(typeof(VisitScheduleDbContext))]
-    partial class VisitScheduleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230314174526_ChangeSchema")]
+    partial class ChangeSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

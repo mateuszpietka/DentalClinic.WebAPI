@@ -15,7 +15,7 @@ internal class VisitScheduleDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasDefaultSchema("medicalRecords");
+        modelBuilder.HasDefaultSchema("visitSchedule");
         modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
     }
 }
