@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Modules\MedicalRecords\DentalClinic.MedicalRecords.Core\DentalClinic.MedicalRecords.Core.csproj" />
+    <ProjectReference Include="..\DentalClinic.MedicalRecords.Core\DentalClinic.MedicalRecords.Core.csproj" />
   </ItemGroup>
 
 </Project>

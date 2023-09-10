@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\DentalClinic.MedicalRecords.Infrastructure\DentalClinic.MedicalRecords.Infrastructure.csproj" />
     <ProjectReference Include="..\DentalClinic.MedicalRecords.Application\DentalClinic.MedicalRecords.Application.csproj" />
+    <ProjectReference Include="..\DentalClinic.MedicalRecords.Infrastructure\DentalClinic.MedicalRecords.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
