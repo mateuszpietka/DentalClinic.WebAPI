@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DentalClinic.VisitSchedule.Application\DentalClinic.VisitSchedule.Application.csproj" />
     <ProjectReference Include="..\DentalClinic.VisitSchedule.Infrastructure\DentalClinic.VisitSchedule.Infrastructure.csproj" />
   </ItemGroup>
