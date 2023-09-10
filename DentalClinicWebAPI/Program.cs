@@ -19,7 +19,7 @@ namespace DentalClinicWebAPI
             builder.Services.AddUsersModule(configuration);
             builder.Services.AddVisitScheduleModule(configuration);
             builder.Services.AddMedicalRecordsModule(configuration);
-            builder.Services.AddControllers();
+            builder.Services.AddControllers();//lpasld
             builder.Services.AddSwaggerGen();
             builder.Services.AddCors(options =>
             {
